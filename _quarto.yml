@@ -1,13 +1,17 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "IsabellaSegarra.github.io"
+  title: "Isabella Segarra"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
+      - resources.qmd
+      - href: resources.qmd
+        text: Resources
 
 format:
   html:
@@ -16,6 +20,7 @@ format:
       - brand
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 
