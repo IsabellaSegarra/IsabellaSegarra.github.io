@@ -1,1 +1,14 @@
 /* css styles */
+
+
+// colors
+$lightblue: #9FD0D6;
+$lightyellow: #ECD577;
+$lightorange: #F2A176;
+$purple: #985D73;
+$darkpurple:#251f25;
+
+// define quarto variables
+$body-bg:
+$navbar-bg: $purple
+$nav-bar-fg: $darkpurple

@@ -4,21 +4,30 @@ project:
 
 website:
   title: "Isabella Segarra"
+  #favicon:images/favicon.png
   navbar:
+    #logo:images/logo.png
+    #logo-alt:
+    #title:false
     right:
       - href: index.qmd
         text: Home
-      # - about.qmd
-      # - resources.qmd
+      - about.qmd
+      - resources.qmd
       - href: resources.qmd
         text: Resources
+      - icon: github 
+        href: https://github.com/IsabellaSegarra/IsabellaSegarra.github.io
+    page-footer: 
+      left: Copyright 2025, Isabella Segarra 
+      right: something here
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: styles.scss
     toc: true
     page-layout: full
+    mainfont: Josefin Sans 
 
 editor: visual
 

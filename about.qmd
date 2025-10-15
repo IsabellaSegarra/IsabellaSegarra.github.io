@@ -2,3 +2,8 @@
 title: "About"
 ---
 
+## My journey
+
+Talk about your journey to your professional career
+
+## What I do for fun 
