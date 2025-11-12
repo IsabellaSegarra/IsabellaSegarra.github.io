@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+
+//import google fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+//fonts
+$Nunito:"Nunito", sans-serif;
+
+// colors
+$lightblue: #9FD0D6;
+$lightyellow: #ECD577;
+$lightorange: #F2A176;
+$purple: #985D73;
+$darkpurple:#251f25;
+
+// define quarto variables
+$navbar-bg: $lightblue;
+$nav-bar-fg: $darkpurple;
+$navbar-hl: $darkpurple;
+
+/*-- scss:rules --*/
+
+h1,h2,h3,h4{
+  font-family:$Nunito;
+}
+
+h1,h2{
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.title{
+  color:$darkpurple;
+}
+
+.center-text{
+  text-align:center;
+}
+
+.lightorgange.text{
+  color:$lightorange;
+}
+
+
+
