@@ -1,0 +1,11 @@
+# any operations here will apply to all posts
+
+author: 
+  - name: Isabella Segarra
+    url: https://isabellasegarra.github.io/ 
+    affiliation: The Bren School of Environmental Science and Management 
+    affiliation-url: https://bren.ucsb.edu/ 
+    
+title-block-banner: true
+
+freeze: auto 

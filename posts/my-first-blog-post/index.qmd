@@ -1,0 +1,24 @@
+---
+title: "My first blog post"
+description: "short description of blog post"
+date: 2025-11-12
+categories: [MEDS, R, data-viz] #add hyphen for multiple words
+#image: image.png
+citation: # true if no link 
+  url: https://isabellasegarra.github.io/posts/my-first-blog-post
+draft: true
+draft-mode: linked
+bibliography: references.bib
+---
+
+# Blog post title
+
+Snippet to draw attention here.
+
+I am going to add a footnote here [^1]. Here's an inline footnote \[\^ inline footnote\]
+
+[^1]: Additional context
+
+I'm going to cite myself [@segarra2025]!
+
+Citing outside sources: [@keeling2008]
