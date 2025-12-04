@@ -8,3 +8,6 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Posts data
+posts/2025-12-03-eds220-blog/data

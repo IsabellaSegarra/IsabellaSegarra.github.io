@@ -1,0 +1,23 @@
+---
+title: "Visualizing fire scares through false color"
+description: "blog post description (appears underneath the title in smaller text) which is included on the listing page"
+author:
+  - name: Isabella Segarra 
+    url: https://github.com/IsabellaSegarra
+    affiliation: Master of Environmental Data Science Program @ The Bren School (UCSB)
+    affiliation-url: https://ucsb-meds.github.io/
+date: 12-03-2025
+categories: [Quarto, R, MEDS, data-viz]
+citation:
+  url: https://isabellasegarra.github.io/posts/2025-12-03-eds220-blog
+image: preview-image.png
+draft: false
+---
+
+In January 2025, the Eaton and Palisades fires erupted in the foothills of Los Angeles county, devasting the region and displacing thousands[^1]. In this project, I integrated data from Landsat Collection 2 Level-2 atmospherically corrected surface reflactance data. This data has already been clipped to the area of the fire perimeters. This data is used to visualize the burn scars left from the Eaton and Palisades fire and is utilized with the fire perimeter data. 
+
+
+[View github repository here.](https://github.com/IsabellaSegarra/eds220-hwk4) 
+
+## Citations
+[^#]:
