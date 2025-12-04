@@ -14,10 +14,14 @@ image: preview-image.png
 draft: false
 ---
 
-In January 2025, the Eaton and Palisades fires erupted in the foothills of Los Angeles county, devasting the region and displacing thousands[^1]. In this project, I integrated data from Landsat Collection 2 Level-2 atmospherically corrected surface reflactance data. This data has already been clipped to the area of the fire perimeters. This data is used to visualize the burn scars left from the Eaton and Palisades fire and is utilized with the fire perimeter data. 
+In January 2025, the Eaton and Palisades fires erupted in the foothills of Los Angeles county, devastating the region and displacing thousands\[\^1\]. In this project, I integrated data from Landsat Collection 2 Level-2 atmospherically corrected surface reflactance data with fire perimeters from the Eaton and Palisades fires.
 
+This data has already been clipped to the area of the fire perimeters. This data is used to visualize the burn scars left from the Eaton and Palisades fire and is utilized with the fire perimeter data.
 
-[View github repository here.](https://github.com/IsabellaSegarra/eds220-hwk4) 
+```{Python}
+#| output: false
+```
+
+[View github repository here.](https://github.com/IsabellaSegarra/eds220-hwk4)
 
 ## Citations
-[^#]:

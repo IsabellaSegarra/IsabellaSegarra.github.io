@@ -5,6 +5,4 @@ listing:
   type: grid 
   sort: "date desc" # descending dates 
   categories: true 
-
 ---
-
