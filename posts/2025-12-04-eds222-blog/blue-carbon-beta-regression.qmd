@@ -165,7 +165,7 @@ Why include `max_depth`? Deeper soils might have more organic matter accumulatio
 
 I represented these casual relationships with a DAG (directed acyclic graph):
 
-[!DAG](images/DAG-final-project.png)
+![DAG](images/DAG-final-project.png)
 
 ### Statistical Notation of model
 
