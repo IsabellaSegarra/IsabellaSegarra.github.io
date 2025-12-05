@@ -55,10 +55,10 @@ library(paletteer)
 
 # Import 'CCN_sites', 'CCN_species', 'CCN_cores', 'CCN_depth_series'
 
-sites <- read_csv(here("data", "CCN_sites.csv"))
-species <- read_csv(here("data", "CCN_species.csv"))
-cores <- read_csv(here("data", "CCN_cores.csv"))
-depth_series <- read_csv(here("data", "CCN_depthseries.csv"))
+sites <- read_csv(here("posts/2025-12-04-eds222-blog/CCN_data/CCN_sites.csv"))
+species <- read_csv(here("posts/2025-12-04-eds222-blog/CCN_data/CCN_species.csv"))
+cores <- read_csv(here("posts/2025-12-04-eds222-blog/CCN_data/CCN_cores.csv"))
+depth_series <- read_csv(here("posts/2025-12-04-eds222-blog/CCN_data/CCN_depthseries.csv"))
 
 ```
 
@@ -350,7 +350,7 @@ predict_plot
 
 ## Conclusion and next steps
 
-## Refrences
+## References
 
 ## Github
 
