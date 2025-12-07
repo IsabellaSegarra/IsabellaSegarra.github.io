@@ -260,7 +260,6 @@ div.csl-indent {
   <li><a href="#generalizable-function" id="toc-generalizable-function" class="nav-link" data-scroll-target="#generalizable-function">Generalizable function</a></li>
   <li><a href="#apply-function-blue-mussels" id="toc-apply-function-blue-mussels" class="nav-link" data-scroll-target="#apply-function-blue-mussels">Apply function: Blue Mussels</a></li>
   <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final Thoughts</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -296,7 +295,7 @@ div.csl-indent {
 <figcaption>Pacific Oyster</figcaption>
 </figure>
 </div>
-<p><img src="images/o_mytedu.jpg" class="img-fluid" width="300" alt="Blue Mussel"> source:<span class="citation" data-cites="MarLIN_MytilusEdulisImage">MarLIN – The Marine Life Information Network (<a href="#ref-MarLIN_MytilusEdulisImage" role="doc-biblioref">n.d.</a>)</span></p>
+<p><img src="images/o_mytedu.jpg" class="img-fluid" width="300" alt="Blue Mussel"> source: <span class="citation" data-cites="MarLIN_MytilusEdulisImage">MarLIN – The Marine Life Information Network (<a href="#ref-MarLIN_MytilusEdulisImage" role="doc-biblioref">n.d.</a>)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small">
@@ -355,7 +354,7 @@ div.csl-indent {
 </section>
 <section id="depth-data" class="level3">
 <h3 class="anchored" data-anchor-id="depth-data">Depth Data</h3>
-<p>In this study, I will use bathymetry data from the General Bathymetric Chart of the Oceans .</p>
+<p>In this study, I will use bathymetry data from the General Bathymetric Chart of the Oceans <span class="citation" data-cites="GEBCO2022">GEBCO Compilation Group (<a href="#ref-GEBCO2022" role="doc-biblioref">2022</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Import Depth Data......</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>depth <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"marine-aquaculture-blog"</span>, <span class="st">"data"</span>, <span class="st">"depth.tif"</span>)) <span class="sc">%&gt;%</span> </span>
@@ -492,7 +491,7 @@ div.csl-indent {
 </section>
 <section id="determine-the-most-suitable-eez" class="level2">
 <h2 class="anchored" data-anchor-id="determine-the-most-suitable-eez">Determine the most suitable EEZ</h2>
-<p>In this section, I will determine the total suitable area within each EEZ for oysters. This data is from <a href="https://www.marineregions.org/eez.php">Marineregions.org</a>.</p>
+<p>In this section, I will determine the total suitable area within each EEZ for oysters. This data is from <a href="https://www.marineregions.org/eez.php">Marineregions.org</a> <span class="citation" data-cites="FlandersMarineInstitute_EEZ">Flanders Marine Institute (<a href="#ref-FlandersMarineInstitute_EEZ" role="doc-biblioref">2025</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Import Data and Check CRS......</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -794,16 +793,7 @@ fit well, and are therefore rescaled.
 </section>
 <section id="final-thoughts" class="level2">
 <h2 class="anchored" data-anchor-id="final-thoughts">Final Thoughts</h2>
-<p>This project investigated the suitable habitats for two focal species –oyster and blue mussel– for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function <code>suitability_fun</code> can be used on a variety of species of interest for marine aquaculture. This opportunity to expand</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>SeaLifeBase. (n.d.). Summary for Species #47622 [Web page]. Retrieved November 29, 2025, from https://www.sealifebase.ca/summary/47622</p>
-<p>Zagata, C., Young, C., Sountis, J., &amp; Kuehl, M. (2008). Mytilus edulis [Web page]. Retrieved November 29, 2025, from https://animaldiversity.org/accounts/Mytilus_edulis/</p>
-<p>GEBCO Compilation Group. (2022). GEBCO_2022 Grid [Data set]. https://doi.org/10.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c</p>
-<p>NOAA Coral Reef Watch. (n.d.). 5‑km Sea Surface Temperature Anomaly (SSTA) product [Data set]. Retrieved November 29, 2025, from https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php</p>
-<p>Flanders Marine Institute. (2025). Maritime Boundaries Geodatabase: Exclusive Economic Zones (EEZ) [Data set]. Retrieved November 29, 2025, from https://www.marineregions.org/eez.php</p>
-<p>“Mytilus edulis.” MarLIN – The Marine Life Information Network, n.d., https://www.marlin.ac.uk/assets/images/marlin/species/web/o_mytedu.jpg. Accessed 29 Nov.&nbsp;2025.</p>
+<p>This project investigated the suitable habitats for two focal species –oyster and blue mussel– for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function <code>suitability_fun</code> can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter.</p>
 
 
 
@@ -816,6 +806,12 @@ Aquarium of the Pacific. n.d. <span>“Marine Aquaculture.”</span> n.d. <a hre
 </div>
 <div id="ref-ArevaloMartinez2024" class="csl-entry" role="listitem">
 Arévalo-Martínez, D. L. 2024. <span>“Offshore Aquaculture Greenhouse Gas Emissions Based on Ocean Net Primary Productivity.”</span> <em>Nature Food</em> 5: 548–49. <a href="https://doi.org/10.1038/s43016-024-01005-x">https://doi.org/10.1038/s43016-024-01005-x</a>.
+</div>
+<div id="ref-FlandersMarineInstitute_EEZ" class="csl-entry" role="listitem">
+Flanders Marine Institute. 2025. <span>“Maritime Boundaries Geodatabase: Exclusive Economic Zones (EEZ).”</span> Data set. <a href="https://www.marineregions.org/eez.php">https://www.marineregions.org/eez.php</a>.
+</div>
+<div id="ref-GEBCO2022" class="csl-entry" role="listitem">
+GEBCO Compilation Group. 2022. <span>“GEBCO_2022 Grid.”</span> Data set. <a href="https://doi.org/10.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c">https://doi.org/10.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c</a>.
 </div>
 <div id="ref-Gentry2017" class="csl-entry" role="listitem">
 Gentry, Ryan R., Heike E. Froehlich, Danielle Grimm, Peter Kareiva, Michael Parke, Michael Rust, Steven D. Gaines, and Benjamin S. Halpern. 2017. <span>“Mapping the Global Potential for Marine Aquaculture.”</span> <em>Nature Ecology &amp; Evolution</em> 1: 1317–24. <a href="https://doi.org/10.1038/s41559-017-0257-9">https://doi.org/10.1038/s41559-017-0257-9</a>.

@@ -20,10 +20,6 @@ about:
       icon: envelope 
 ---
 
-## A little about me...
+## Hi there!
 
-Hello world! I am Isabella Segarra, a beginner environmental data scientist and student at UCSB’s Bren Masters of Environmental Data Science. Before Bren, I studied Environmental Science at UC Merced, in the heart of the Central Valley. There, I developed a love for ecology; joining research projects studying fungal ecology, phenology, and even conducting my own research on grassland non-native species. For most of my undergrad experience, my research interests were all over the place and so I decided to study the data for the ecosystems and environmental processes I love. In my free time, I enjoy training for marathons (2x full; 1 half marathon), reading, and thrifting! 
-
-## Education
-
-## Professional Experience
+I am Isabella Segarra, a beginner environmental data scientist and student at UCSB’s Bren Masters of Environmental Data Science. Before Bren, I studied Environmental Science at UC Merced, in the heart of the Central Valley. There, I developed a love for ecology; joining research projects studying fungal ecology, phenology, and even conducting my own research on grassland non-native species. For most of my undergrad experience, my research interests were all over the place and so I decided to study the data for the ecosystems and environmental processes I love. In my free time, I enjoy training for marathons (2x full; 2x half marathons), reading, and thrifting!
