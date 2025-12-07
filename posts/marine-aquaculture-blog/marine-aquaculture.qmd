@@ -63,7 +63,7 @@ The two focal species for this study are oysters and blue mussels (*Mytilus edul
 
 ![Pacific Oyster](images/pacific_oyster.jpg){width="300px"}
 
-![Blue Mussel](images/o_mytedu.jpg){width="300px"} source: @MarLIN_MytilusEdulisImage
+![Blue Mussel](images/o_mytedu.jpg){width="300px"}
 
 ```{r}
 #| label: table species info
