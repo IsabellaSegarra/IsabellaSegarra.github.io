@@ -524,4 +524,18 @@ suitability_fun(
 
 ## Final Thoughts 
 
-This project investigated the suitable habitats for two focal species --oyster and blue mussel-- for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function `suitability_fun` can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter. 
+This project investigated the suitable habitats for two focal species --oyster and blue mussel-- for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function `suitability_fun` can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continute to rise due to climate change, the suitability for these species may alter. 
+
+## References
+SeaLifeBase. (n.d.). Summary for Species #47622 [Web page]. Retrieved November 29, 2025, from https://www.sealifebase.ca/summary/47622
+
+Zagata, C., Young, C., Sountis, J., & Kuehl, M. (2008). Mytilus edulis [Web page]. Retrieved November 29, 2025, from https://animaldiversity.org/accounts/Mytilus_edulis/
+
+GEBCO Compilation Group. (2022). GEBCO_2022 Grid [Data set]. https://doi.org/10.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c
+
+NOAA Coral Reef Watch. (n.d.). 5‑km Sea Surface Temperature Anomaly (SSTA) product [Data set]. Retrieved November 29, 2025, from https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta.php
+
+Flanders Marine Institute. (2025). Maritime Boundaries Geodatabase: Exclusive Economic Zones (EEZ) [Data set]. Retrieved November 29, 2025, from https://www.marineregions.org/eez.php
+
+"Mytilus edulis." MarLIN – The Marine Life Information Network, n.d., https://www.marlin.ac.uk/assets/images/marlin/species/web/o_mytedu.jpg. Accessed 29 Nov. 2025. 
+
