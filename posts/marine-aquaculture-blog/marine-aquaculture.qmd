@@ -1,5 +1,5 @@
 ---
-title: "Investigating Exclusive Economic Zones (EEZ) for Marine Aquaculture"
+title: "Assessing Potential Species for Marine Aquaculture in West Coast EEZs"
 description: "Reproducible functions for assessing species for marine aquaculture."
 date: 2025-12-6
 categories: [MEDS, R, data-viz] #add hyphen for multiple words
@@ -11,12 +11,9 @@ draft-mode: linked
 bibliography: references.bib
 ---
 
-# Assessing Potential Species for Marine Aquaculture in West Coast EEZs
-
-
 Have you ever thought about the environmental impact of the food you eat? If you’re anything like me, you may have tried going vegan or vegetarian at some point, hoping to reduce your carbon footprint by cutting out beef and other protein sources often linked to greenhouse gas emissions. While individual choices are important, solutions that are practical and scalable—like *marine aquaculture*—can have a far more direct and meaningful impact on mitigating climate change.
 
-What is marine aquaculture?
+*What is marine aquaculture?*
 
 "Marine aquaculture refers to the breeding, rearing, and harvesting of aquatic plants and animals. It can take place in the ocean, or on land in tanks and ponds." (@NOAA_Fisheries_2025).
 
@@ -24,7 +21,7 @@ To many, farming in the ocean might sound novel—but it’s actually been a par
 
 As the demand for seafood increases, reliance soley on wild-caught populations, which has been ins teady decline since the 1980s (@AquariumPacific_MarineAquaculture) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (@ArevaloMartinez2024). It complements current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow. 
 
-As mentioned by Gentry et. al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (@Gentry2017). The article mentioned that proper planning is key to succesful marine aquaculture. That includes choosing the correct species based on environmentla factors and the species' suitability. 
+As mentioned by Gentry et.al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (@Gentry2017). The article mentioned that proper planning is key to successful marine aquaculture. That includes choosing the correct species based on environmental factors and the species' suitability. 
 
 
 ## Overview of study
