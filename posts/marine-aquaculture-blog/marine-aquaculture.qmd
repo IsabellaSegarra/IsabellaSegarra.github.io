@@ -374,21 +374,22 @@ Now I will map the suitable locations for oyster marien aquaculture.
 ```{r}
 
 #| label: oyster map
-oyster_map <- tm_tiles("Esri.WorldImagery", alpha = 0.7) + # basemap with tm_tiles()
+oyster_map <-
+  tm_basemap("Esri.WorldImagery") +
 tm_shape(eez_suitable_locations) +
   tm_polygons(fill = "area_suitable_km" , # fill polygons based on suitable area 
               style = "cont", # continuous value scale 
     palette = c("#9ef7f0", "#1d524d"), # palette of colors 
     title = "Suitable habitat (km²)", size = 0.8) + # legend title 
   tm_layout(legend.outside = TRUE, 
-            legend.text.size = 0.5) + # legend position and size
-  tm_title("Suitable Habitat Range for Oyster Aquaculture", fontface = "bold", size = 0.8) + # title 
+            legend.text.size = 0.5) +
+  tm_title(paste("Suitable Habitat Range For", "Oyster Aquaculture", sep = "\n"), size = 1)  +
   tm_graticules(lwd = 0.2) + # gridlines 
-  tm_scalebar(position = c("left", "bottom"), text.size = 0.5) + #scalebar 
+  tm_scalebar(position = c("left", "bottom"), text.size = 0.3)+ #scalebar 
   tm_text("rgn", # overlay text for region
-          size = 0.5,  
+          size = 0.4,  
           xmod = -0.2,
-  ymod = 0.2)
+  ymod = 0.3)
                 
 # View map
 oyster_map 
@@ -470,25 +471,22 @@ eez_suitable_locations <- st_as_sf(eez_suitable_locations)
 
 # 7.  Create map 
   
-species_map <- tm_tiles("Esri.WorldImagery", alpha = 0.7) + # basemap with tm_tiles()
+species_map <-
+tm_basemap("Esri.WorldImagery") +
 tm_shape(eez_suitable_locations) +
   tm_polygons(fill = "area_suitable_km" , # fill polygons based on suitable area 
               style = "cont", # continuous value scale 
     palette = c("#9ef7f0", "#1d524d"), # palette of colors 
     title = "Suitable habitat (km²)", size = 0.8) + # legend title 
   tm_layout(legend.outside = TRUE, 
-            legend.text.size = 0.5) + # legend position and size 
-  tm_title(
-  paste0("Suitable Habitat Range for ", species, " Aquaculture"),
-  fontface = "bold",
-  size = 1
-)+ # title 
+            legend.text.size = 0.5) +
+  tm_title(paste("Suitable Habitat Range For", "\n", "Blue Mussel Marine Aquaculture"), size = 1) +
   tm_graticules(lwd = 0.2) + # gridlines 
-  tm_scalebar(position = c("left", "bottom"), text.size = 0.5) + #scalebar 
+  tm_scalebar(position = c("left", "bottom"), text.size = 0.3)+ #scalebar 
   tm_text("rgn", # overlay text for region
-          size = 0.5,  
+          size = 0.4,  
           xmod = -0.2,
-  ymod = 0.2)
+  ymod = 0.3)
 
 
 # return species map and table of eez suitable area 
