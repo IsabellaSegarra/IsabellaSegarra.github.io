@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Isabella Segarra">
+<meta name="dcterms.date" content="2025-12-10">
+<meta name="description" content="A dive into observer and sampling bias in community science bird data.">
 
-<title>Blog – Isabella Segarra</title>
+<title>The Bias in Birding – Isabella Segarra</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a47c2f962efd7fbe5a1c4c6457512e9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a47c2f962efd7fbe5a1c4c6457512e9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,78 +71,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Isabella Segarra</span>
     </a>
   </div>
@@ -152,23 +95,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
@@ -184,175 +127,146 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">The Bias in Birding</h1>
+                  <div>
+        <div class="description">
+          A dive into observer and sampling bias in community science bird data.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">MEDS</div>
+                <div class="quarto-category">data-bias</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://isabellasegarra.github.io/">Isabella Segarra</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://bren.ucsb.edu/">
+              The Bren School of Environmental Science and Management
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 10, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ZGF0YS1iaWFz">data-bias <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YS12aXo=">data-viz <span class="quarto-category-count">(3)</span></div><div class="category" data-category="R2Vvc3BhdGlhbA==">Geospatial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TUVEUw==">MEDS <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#observer-bias" id="toc-observer-bias" class="nav-link active" data-scroll-target="#observer-bias">Observer Bias</a></li>
+  <li><a href="#sampling-bias" id="toc-sampling-bias" class="nav-link" data-scroll-target="#sampling-bias">Sampling Bias</a></li>
+  <li><a href="#challenges-in-community-science" id="toc-challenges-in-community-science" class="nav-link" data-scroll-target="#challenges-in-community-science">Challenges in Community Science</a></li>
+  <li><a href="#opportunities-for-community-science" id="toc-opportunities-for-community-science" class="nav-link" data-scroll-target="#opportunities-for-community-science">Opportunities for Community Science</a></li>
+  <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final thoughts</a></li>
+  <li><a href="#personal-statement" id="toc-personal-statement" class="nav-link" data-scroll-target="#personal-statement">Personal statement</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<p>Birding isn’t just a hobby anymore; it is a powerful way for the public to contribute to science. Through community science, everyday birders can contribute to biodiversity monitoring as they document bird populations. But not all observations are created equal, especially across different birding platforms and surveys. Differences in how, when, and why people record birds can introduce bias into these datasets, shaping the story the data tells.</p>
+<p>In this blog, I will explore the biases found in popular birding platforms and surveys, and how they shape community science data. The platforms and surveys mentioned in this blog include the following:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Platform/Survey</th>
+<th>Description</th>
+<th>Sampling design</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>iNaturalist</strong></td>
+<td><a href="https://www.inaturalist.org/">iNaturalist</a> is a multi-taxon community science project from the California Academy of Sciences.</td>
+<td>Less-structured (Callaghan et al.&nbsp;2021)</td>
+</tr>
+<tr class="even">
+<td><strong>eBird</strong></td>
+<td><a href="https://ebird.org/home">eBird</a> is a strictly birding community science project launched by the Cornell Lab of Ornithology.</td>
+<td>Semi-structured (Callaghan et al.&nbsp;2021) and less structured compared to BBS (Scher and Clark 2023)</td>
+</tr>
+<tr class="odd">
+<td><strong>Breeding Bird Survey (BBS)</strong></td>
+<td>The <a href="https://www.pwrc.usgs.gov/bbs/">BBS</a> is an annual birding survey in the United States and Canada.</td>
+<td>Most structured (Scher and Clark 2023)</td>
+</tr>
+</tbody>
+</table>
+<section id="observer-bias" class="level2">
+<h2 class="anchored" data-anchor-id="observer-bias">Observer Bias</h2>
+<p>In the paper “Large-bodied Birds Are Over-represented in Unstructured Citizen Science Data” (Callaghan et al.&nbsp;2021), the authors examined bird observations from two birding platforms: iNaturalist and eBird. They categorize iNaturalist as an unstructured community science platform and eBird as a semi-structured platform. Their motivations were to investigate how differences in sampling efforts and design, from structured to unstructured, influence the birds represented in the data.</p>
+<p>The authors found that both platforms introduce observer bias, or systematic differences in how observers record birds (Konno et al.&nbsp;2024). On iNaturalist, observations tend to be “opportunistic,” with users recording only species they encounter and find interesting. This means large, common, or charismatic birds are overrepresented, while small, fast, or cryptic species are underreported. In eBird, avid birders often seek uncommon or rare species to add to life lists, which similarly skews the dataset toward species that are easier to detect or more desirable to report. As one eBird user noted in a <a href="https://www.facebook.com/groups/288737854555183/posts/8659713760790842/">community discussion post on Facebook</a>: “Never forget that eBird is not a record of where birds are. It’s a record of where birders are.”</p>
+</section>
+<section id="sampling-bias" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-bias">Sampling Bias</h2>
+<p>Sampling design further shapes the patterns in these datasets. Not all bird observations are collected the same way, and differences in protocols influence what gets recorded. On iNaturalist, users must submit a photo for an observation to be considered “research-grade.” This requirement favors species that are easy to photograph and contributes fewer overall observations to the <a href="https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">Global Biodiversity Information Facility</a>(GBIF), since only research-grade records are included. eBird, in contrast, incorporates all submissions but encourages birders to visit “hotspots” (locations known for high species richness or a rare life list bird). As a result, areas like wetlands, refuges, and parks are heavily sampled, while everyday places such as neighborhoods or farmland are underrepresented. These design choices introduce bias in both platforms, creating uneven coverage across species and habitats and limiting the scope of the data.</p>
+<p>In a similar study, Scher and Clark (2023) compared the sampling designs of eBird and the Breeding Bird Survey (BBS). They defined eBird as a less structured platform in comparison to the BBS. Their statistical models indicated that both common and less “popular” species were reported less frequently in eBird than in the BBS, primarily due to differences in observer goals and survey protocols. The BBS employs fixed routes and timed protocols, which limit the range of data compared to eBird, but yield more reproducible results. Similar to the findings of Callaghan et al., eBird reports a larger total number of observations, but this does not necessarily translate to more complete information. Without considering the sampling design and observer behavior, analyses based solely on eBird data may misrepresent species distributions or population trends.</p>
+</section>
+<section id="challenges-in-community-science" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-in-community-science">Challenges in Community Science</h2>
+<p>Both studies highlight how sampling design and observer behavior shape what ends up in the data. Although these distinctions appear harmless, they can lead to the way that biodiversity is monitored and which species get priority for conservation. For instance, rare or charismatic species often attract more public interest, which can translate into disproportionate conservation funding (the charismatic megafauna bias). These underlying biases mean that community-science datasets can distort estimates of species distributions, population trends, and community composition.</p>
+<p>Another important impact of these biases is that it informs how and who uses the data. While there is an increasing interest in using community science data to broaden the range of data collection and address diverse ecological questions, researchers often hesitate to adopt this data due to concerns about its quality stemming from these biases (Callaghan et al.&nbsp;2020). For one, community science is limited spatially and temporally. Much data is collected during specific times, such as weekends and peak migration seasons, and primarily in public spaces. This creates an uneven representation, with birding observations skewed towards hotspots and even more common in affluent and predominantly white neighborhoods (Ellis-soto et al.&nbsp;2023). Consequently, the data from these projects can distort the estimate of biodiversity within these communities.</p>
+</section>
+<section id="opportunities-for-community-science" class="level2">
+<h2 class="anchored" data-anchor-id="opportunities-for-community-science">Opportunities for Community Science</h2>
+<p>Despite these challenges, community science data plays a crucial role in bridging the gap between scientists and the public. As Young et al.&nbsp;(2014) note, communication between scientists and policymakers is riddled with challenges, but growing public interest in biodiversity conservation can help bridge that gap. When individuals actively engage in biodiversity monitoring, it produces public awareness and interest in conservation issues. As the saying goes, politicians serve the public; thus, heightened public demand for biodiversity conservation may encourage policymakers to listen to scientists more often. This interaction highlights the importance of addressing biases in data collection while recognizing the potential of community science to facilitate meaningful conversations around conservation.</p>
+</section>
+<section id="final-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="final-thoughts">Final thoughts</h2>
+<p>As I explore the biases present in community science data, I continue to discover multiple biases at play. This suggests that biases often do not operate in isolation; typically, one bias can lead to another (for example, sampling design can influence observer bias). So, what is the solution? Should we only utilize data from sampling designs with stricter protocols such as those in the BBS? Or will that narrow the scope of the data by neglecting the abundance of data from eBird and iNaturalist? How can I, as a data scientist, effectively use the vast amount of biodiversity data that contains these biases? The answer is not simple and can range depending on the use of the data. Callaghan et al.&nbsp;2021 encourages the use of statistical models to adjust for data that comes from different sampling designs. This can help you integrate multiple datasets, eliminating the bias before merging. Ultimately, understanding the limitations and context of the data at hand is crucial. The data can only be what it is, which means being aware of the variables included in the dataset as well as those that are not. And it’s important to question why certain variables were included or excluded from the study altogether. Through these adjustments, we can produce more accurate interpretations and applications of biodiversity data, paving the way for more informed ecological understanding and conservation efforts.</p>
+</section>
+<section id="personal-statement" class="level2">
+<h2 class="anchored" data-anchor-id="personal-statement">Personal statement</h2>
+<p>I have been a hobby birder for almost four years now. I have participated in community science projects such as the Christmas Bird Count and even led birding groups in the field.As a birder, I routinely use apps like eBird, iNaturalist, and Merlin to document the birds I find. After writing this blog I reflected on my own biases in my data collection. I definitely fall victim to recording exciting birds over common species. There is many a time I will not record a flock of mourning doves over a flock of mountain bluebirds (I love mountain bluebirds). I am guilty in seeking out birding locations for a chance to receive a life list bird (pileated woodpecker hello!).</p>
+<p><img src="me._birdbanding.png" class="img-fluid" alt="Birdbanding"> ADJUST SIZE</p>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TUVEUyUyQ2RhdGEtYmlhcw==" data-listing-date-sort="1765353600000" data-listing-file-modified-sort="1765423941205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1318">
-<a href="./posts/ethics-blog-post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/ethics-blog-post/bird_in_binos.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The Bias in Birding
-</h5>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS1iaWFz'); return false;">data-bias</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A dive into observer and sampling bias in community science bird data.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Isabella Segarra
-</div>
-<div class="listing-date">
-Dec 10, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="TUVEUyUyQ1IlMkNkYXRhLXZpeg==" data-listing-date-sort="1765008000000" data-listing-file-modified-sort="1765239671451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2580">
-<a href="./posts/marine-aquaculture-blog/marine-aquaculture.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/marine-aquaculture-blog/images/image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Assessing Potential Species for Marine Aquaculture in West Coast EEZs
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS12aXo='); return false;">data-viz</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Reproducible functions for assessing species for marine aquaculture.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Isabella Segarra
-</div>
-<div class="listing-date">
-Dec 6, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="TUVEUyUyQ1IlMkNkYXRhLXZpeg==" data-listing-date-sort="1764835200000" data-listing-file-modified-sort="1764944113982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1445">
-<a href="./posts/2025-12-04-eds222-blog/blue-carbon-beta-regression.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-12-04-eds222-blog/image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Investigating Blue Carbon with Beta Regression
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS12aXo='); return false;">data-viz</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A brief statistical analysis of soil carbon.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Isabella Segarra
-</div>
-<div class="listing-date">
-Dec 4, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDTUVEUyUyQ2RhdGEtdml6JTJDR2Vvc3BhdGlhbA==" data-listing-date-sort="1764748800000" data-listing-file-modified-sort="1764826086313" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1500">
-<a href="./posts/2025-12-03-eds220-blog/eaton-palisades-blog.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-12-03-eds220-blog/preview-image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Visualizing the Palisades and Eaton Fires: False Color, True Color, and Community Impacts
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS12aXo='); return false;">data-viz</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2Vvc3BhdGlhbA=='); return false;">Geospatial</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Utilizing satellite imagery to map fire impacts.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Isabella Segarra
-</div>
-<div class="listing-date">
-Dec 3, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{segarra2025,
+  author = {Segarra, Isabella},
+  title = {The {Bias} in {Birding}},
+  date = {2025-12-10},
+  url = {https://isabellasegarra.github.io/posts/ethics-blog-post},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-segarra2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Segarra, Isabella. 2025. <span>“The Bias in Birding.”</span> December
+10, 2025. <a href="https://isabellasegarra.github.io/posts/ethics-blog-post">https://isabellasegarra.github.io/posts/ethics-blog-post</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
