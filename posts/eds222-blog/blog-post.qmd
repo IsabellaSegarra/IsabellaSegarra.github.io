@@ -15,7 +15,7 @@ bibliography: references.bib
 
 Large amounts of carbon is naturally stored in the world's oceans and in the soil of coastal wetlands. This is referred to as *blue carbon*.
 
-Blue carbon is unique due to its ability to store or sequester carbon at a much faster rate than terrestrial ecosystems like forests. This carbon is stored in the soils of these ecosystems -- marsh, sea grass, mangrove, and salt marshes. These habitats are of growing interest as greenhouse gases continue to accumulate in the atmosphere. Understanding the biogeochemical processes that make up carbon sequestration is important for advancing blue carbon management as a solution to climate change. (@USGS_BlueCarbon_2024).
+Blue carbon is unique due to its ability to store or sequester carbon at a much faster rate than terrestrial ecosystems like forests(@NOAA_BlueCarbon_OceanService2024). This carbon is stored in the soils of these ecosystems -- marsh, sea grass, mangrove, and salt marshes. These habitats are of growing interest as greenhouse gases continue to accumulate in the atmosphere. Understanding the biogeochemical processes that make up carbon sequestration is important for advancing blue carbon management as a solution to climate change. (@USGS_BlueCarbon_2024).
 
 ![Graphic of blue carbon ecosystems and carbon sequestration. Source: USGS](images/blue_carbon_graphic.png)
 
