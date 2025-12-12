@@ -2,7 +2,7 @@
 title: "Assessing Potential Species for Marine Aquaculture in West Coast EEZs"
 description: "Reproducible functions for assessing species for marine aquaculture."
 date: 2025-12-6
-categories: [MEDS, R, data-viz] #add hyphen for multiple words
+categories: [MEDS, R, data-viz, Geospatial] #add hyphen for multiple words
 image: images/image.png
 citation: # true if no link 
   url: https://isabellasegarra.github.io/posts/marine-aqaculture-blog
