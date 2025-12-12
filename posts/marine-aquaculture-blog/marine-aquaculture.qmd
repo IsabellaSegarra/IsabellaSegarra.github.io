@@ -17,23 +17,22 @@ Have you ever thought about the environmental impact of the food you eat? If you
 
 "Marine aquaculture refers to the breeding, rearing, and harvesting of aquatic plants and animals. It can take place in the ocean, or on land in tanks and ponds." (@NOAA_Fisheries_2025).
 
-To many, farming in the ocean might sound novel—but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (@Groesbeck2014). 
+To many, farming in the ocean might sound novel—but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (@Groesbeck2014).
 
-As the demand for seafood increases, reliance soley on wild-caught populations, which has been ins teady decline since the 1980s (@AquariumPacific_MarineAquaculture) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (@ArevaloMartinez2024). It complements current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow. 
+As the demand for seafood increases, reliance soley on wild-caught populations, which has been ins teady decline since the 1980s (@AquariumPacific_MarineAquaculture) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (@ArevaloMartinez2024). It complements current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow.
 
-As mentioned by Gentry et.al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (@Gentry2017). The article mentioned that proper planning is key to successful marine aquaculture. That includes choosing the correct species based on environmental factors and the species' suitability. 
-
+As mentioned by Gentry et.al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (@Gentry2017). The article mentioned that proper planning is key to successful marine aquaculture. That includes choosing the correct species based on environmental factors and the species' suitability.
 
 ## Overview of study
 
-In this study, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: **oysters** and **blue mussels**. Exclusive Economic Zones are regions of the ocean that are open for a country to explore. The U.S. West coast has five regions. (@NOAA_EEZ_facts). 
-
+In this study, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: **oysters** and **blue mussels**. Exclusive Economic Zones are regions of the ocean that are open for a country to explore. The U.S. West coast has five regions. (@NOAA_EEZ_facts).
 
 ```{r}
 #| label: Library import
 #| output: false
 #| message: false
 #| echo: false 
+#| code-fold: true
 
 #.....Environment set-up.....
 library(sf) # For vector data
@@ -50,13 +49,13 @@ library(patchwork) # For plotting
 
 ```
 
-## The Data I Used 
+## The Data I Used
 
-The data for this study includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster. 
+The data for this study includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster.
 
 ### Species data
 
-The two focal species for this study are oysters and blue mussels (*Mytilus edulis*). Both of these bivalve species are found in the Pacific ocean and have the ability to serve as a great protein source for marine aquaculture. I found their depth and temperature requirements from @SeaLifeBase_47622 and @Zagata2008_MytilusEdulis. 
+The two focal species for this study are oysters and blue mussels (*Mytilus edulis*). Both of these bivalve species are found in the Pacific ocean and have the ability to serve as a great protein source for marine aquaculture. I found their depth and temperature requirements from @SeaLifeBase_47622 and @Zagata2008_MytilusEdulis.
 
 ![Pacific Oyster](images/pacific_oyster.jpg){width="300px"}
 
@@ -85,13 +84,13 @@ species_table %>%
 ```
 
 ### Sea Surface Temperature Data
-
-In this study, I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA's Daily Global Satellite Sea Surface Temperature anomaly @NOAACoralReefWatch_SSTA.
+I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA's Daily Global Satellite Sea Surface Temperature anomaly @NOAACoralReefWatch_SSTA.
 
 ```{r}
 #| label: import SST 
 #| output: false 
 #| message: false
+#| code-fold: true
 
 #......Import Sea Surface Temperature Data......
 
@@ -105,8 +104,7 @@ sst <- rast(sst_fp) %>%
 rm(list = 'sst_fp')
 ```
 
-In this section, I will process the sea surface temperature (SST) data in order to combine it with the depth data. The SST data needs to be averaged and converted into Celsius.
-
+I will process the sea surface temperature (SST) data in order to combine it with the depth data. The SST data needs to be averaged and converted into Celsius.
 ```{r}
 #| label: SST data wrangling 
 #......Data Wrangling......
@@ -124,7 +122,7 @@ rm(avg_sst)
 
 ### Depth Data
 
-In this study, I will use bathymetry data from the General Bathymetric Chart of the Oceans @GEBCO2022.
+I will use bathymetry data from the General Bathymetric Chart of the Oceans @GEBCO2022.
 
 ```{r}
 #| label: Depth data import 
@@ -269,6 +267,7 @@ suitable_area <- expanse(suitable_locations, unit = "km")
 ```
 
 ## Determine the most suitable EEZ
+
 In this section, I will determine the total suitable area within each EEZ for oysters. This data is from [Marineregions.org](https://www.marineregions.org/eez.php) @FlandersMarineInstitute_EEZ.
 
 ```{r}
@@ -370,7 +369,9 @@ rgn_table %>%
 ```
 
 ## Map: Oyster Suitable Area
-Now I will map the suitable locations for oyster marien aquaculture. 
+
+Now I will map the suitable locations for oyster marien aquaculture.
+
 ```{r}
 #| label: oyster map
 #| message: false 
@@ -395,10 +396,12 @@ tm_shape(eez_suitable_locations) +
 # View map
 oyster_map 
 ```
+
 The map above depicts the suitable locations for oyster aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Central and Southern California.
 
 ## Generalizable function
-Now that I have a worfklow for determining the suitable locations for oysters, I will create a generalizable function that can be applied to any species of interest. I will test this function for my second focal species **blue mussels**. 
+
+Now that I have a worfklow for determining the suitable locations for oysters, I will create a generalizable function that can be applied to any species of interest. I will test this function for my second focal species **blue mussels**.
 
 ```{r}
 #| label: Generalizable function
@@ -518,7 +521,8 @@ suitability_fun(
 
 *Reflection*: The map above depicts the suitable locations for blue mussel aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Washington. The rest of the California and Oregon coast contain less suitable locations probably due to the temperature range for blue mussels, who prefer colder temperatures.
 
+## Final Thoughts
 
-## Final Thoughts 
+This project investigated the suitable habitats for two focal species --oyster and blue mussel-- for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function `suitability_fun` can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter.
 
-This project investigated the suitable habitats for two focal species --oyster and blue mussel-- for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function `suitability_fun` can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter. 
+- mention the average of 2008 to 2012 (narrow time range, out of scope)
