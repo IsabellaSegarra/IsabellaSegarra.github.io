@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -187,6 +207,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#opportunities-for-community-science" id="toc-opportunities-for-community-science" class="nav-link" data-scroll-target="#opportunities-for-community-science">Opportunities for Community Science</a></li>
   <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts">Final thoughts</a></li>
   <li><a href="#personal-statement" id="toc-personal-statement" class="nav-link" data-scroll-target="#personal-statement">Personal statement</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -227,22 +248,22 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="observer-bias" class="level2">
 <h2 class="anchored" data-anchor-id="observer-bias">Observer Bias</h2>
-<p>In the paper “Large-bodied Birds Are Over-represented in Unstructured Citizen Science Data” (Callaghan et al.&nbsp;2021), the authors examined bird observations from two birding platforms: iNaturalist and eBird. They categorize iNaturalist as an unstructured community science platform and eBird as a semi-structured platform. Their motivations were to investigate how differences in sampling efforts and design, from structured to unstructured, influence the birds represented in the data.</p>
-<p>The authors found that both platforms introduce observer bias, or systematic differences in how observers record birds (Konno et al.&nbsp;2024). On iNaturalist, observations tend to be “opportunistic,” with users recording only species they encounter and find interesting. This means large, common, or charismatic birds are overrepresented, while small, fast, or cryptic species are underreported. In eBird, avid birders often seek uncommon or rare species to add to life lists, which similarly skews the dataset toward species that are easier to detect or more desirable to report. As one eBird user noted in a <a href="https://www.facebook.com/groups/288737854555183/posts/8659713760790842/">community discussion post on Facebook</a>: “Never forget that eBird is not a record of where birds are. It’s a record of where birders are.”</p>
+<p>In the paper “Large-bodied Birds Are Over-represented in Unstructured Citizen Science Data” (<span class="citation" data-cites="Callaghan2021_large_bodied">Callaghan et al. (<a href="#ref-Callaghan2021_large_bodied" role="doc-biblioref">2021</a>)</span>), the authors examined bird observations from two birding platforms: iNaturalist and eBird. They categorize iNaturalist as an unstructured community science platform and eBird as a semi-structured platform. Their motivations were to investigate how differences in sampling efforts and design, from structured to unstructured, influence the birds represented in the data.</p>
+<p>The authors found that both platforms introduce observer bias, or systematic differences in how observers record birds (<span class="citation" data-cites="Konno2024Bias">Konno et al. (<a href="#ref-Konno2024Bias" role="doc-biblioref">2024</a>)</span>). On iNaturalist, observations tend to be “opportunistic,” with users recording only species they encounter and find interesting. This means large, common, or charismatic birds are overrepresented, while small, fast, or cryptic species are underreported. In eBird, avid birders often seek uncommon or rare species to add to life lists, which similarly skews the dataset toward species that are easier to detect or more desirable to report. As one eBird user noted in a <a href="https://www.facebook.com/groups/288737854555183/posts/8659713760790842/">community discussion post on Facebook</a>: “Never forget that eBird is not a record of where birds are. It’s a record of where birders are.”</p>
 </section>
 <section id="sampling-bias" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-bias">Sampling Bias</h2>
 <p>Sampling design further shapes the patterns in these datasets. Not all bird observations are collected the same way, and differences in protocols influence what gets recorded. On iNaturalist, users must submit a photo for an observation to be considered “research-grade.” This requirement favors species that are easy to photograph and contributes fewer overall observations to the <a href="https://www.gbif.org/dataset/4fa7b334-ce0d-4e88-aaae-2e0c138d049e">Global Biodiversity Information Facility</a>(GBIF), since only research-grade records are included. eBird, in contrast, incorporates all submissions but encourages birders to visit “hotspots” (locations known for high species richness or a rare life list bird). As a result, areas like wetlands, refuges, and parks are heavily sampled, while everyday places such as neighborhoods or farmland are underrepresented. These design choices introduce bias in both platforms, creating uneven coverage across species and habitats and limiting the scope of the data.</p>
-<p>In a similar study, Scher and Clark (2023) compared the sampling designs of eBird and the Breeding Bird Survey (BBS). They defined eBird as a less structured platform in comparison to the BBS. Their statistical models indicated that both common and less “popular” species were reported less frequently in eBird than in the BBS, primarily due to differences in observer goals and survey protocols. The BBS employs fixed routes and timed protocols, which limit the range of data compared to eBird, but yield more reproducible results. Similar to the findings of Callaghan et al., eBird reports a larger total number of observations, but this does not necessarily translate to more complete information. Without considering the sampling design and observer behavior, analyses based solely on eBird data may misrepresent species distributions or population trends.</p>
+<p>In a similar study, <span class="citation" data-cites="ScherClark2023">Scher and Clark (<a href="#ref-ScherClark2023" role="doc-biblioref">2023</a>)</span> compared the sampling designs of eBird and the Breeding Bird Survey (BBS). They defined eBird as a less structured platform in comparison to the BBS. Their statistical models indicated that both common and less “popular” species were reported less frequently in eBird than in the BBS, primarily due to differences in survey protocols. The BBS employs fixed routes and timed protocols, which limit the range of data compared to eBird, but yield more reproducible results. Similar to the findings of Callaghan et al.&nbsp;2021, eBird reports a larger total number of observations, but this does not necessarily translate to more complete information. Without considering the sampling design and observer behavior, analyses based solely on eBird data may misrepresent species distributions or population trends.</p>
 </section>
 <section id="challenges-in-community-science" class="level2">
 <h2 class="anchored" data-anchor-id="challenges-in-community-science">Challenges in Community Science</h2>
-<p>Both studies highlight how sampling design and observer behavior shape what ends up in the data. Although these distinctions appear harmless, they can lead to the way that biodiversity is monitored and which species get priority for conservation. For instance, rare or charismatic species often attract more public interest, which can translate into disproportionate conservation funding (the charismatic megafauna bias). These underlying biases mean that community-science datasets can distort estimates of species distributions, population trends, and community composition.</p>
-<p>Another important impact of these biases is that it informs how and who uses the data. While there is an increasing interest in using community science data to broaden the range of data collection and address diverse ecological questions, researchers often hesitate to adopt this data due to concerns about its quality stemming from these biases (Callaghan et al.&nbsp;2020). For one, community science is limited spatially and temporally. Much data is collected during specific times, such as weekends and peak migration seasons, and primarily in public spaces. This creates an uneven representation, with birding observations skewed towards hotspots and even more common in affluent and predominantly white neighborhoods (Ellis-soto et al.&nbsp;2023). Consequently, the data from these projects can distort the estimate of biodiversity within these communities.</p>
+<p>Both studies highlight how sampling design and observer behavior shape what ends up in the data. Although these distinctions appear harmless, they can lead to the way that biodiversity is monitored and which species get priority for conservation. For instance, rare or charismatic species often attract more public interest, which can translate into disproportionate conservation funding (the charismatic megafauna bias). These underlying biases mean that community science datasets can distort estimates of species distributions, population trends, and community composition.</p>
+<p>Another important impact of these biases is that it informs how and who uses the data. While there is an increasing interest in using community science data to broaden the range of data collection and address diverse ecological questions, researchers often hesitate to adopt this data due to concerns about its quality stemming from these biases (Callaghan et al.&nbsp;2020). For one, community science is limited spatially and temporally. Much data is collected during specific times, such as weekends and peak migration seasons, and primarily in public spaces. This creates an uneven representation, with birding observations skewed towards hotspots and even more common in affluent and predominantly white neighborhoods (<span class="citation" data-cites="EllisSoto2023_redlining_bird_sampling">Ellis-Soto, Chapman, and Locke (<a href="#ref-EllisSoto2023_redlining_bird_sampling" role="doc-biblioref">2023</a>)</span>). Consequently, the data from these projects can distort the estimate of biodiversity within these communities.</p>
 </section>
 <section id="opportunities-for-community-science" class="level2">
 <h2 class="anchored" data-anchor-id="opportunities-for-community-science">Opportunities for Community Science</h2>
-<p>Despite these challenges, community science data plays a crucial role in bridging the gap between scientists and the public. As Young et al.&nbsp;(2014) note, communication between scientists and policymakers is riddled with challenges, but growing public interest in biodiversity conservation can help bridge that gap. When individuals actively engage in biodiversity monitoring, it produces public awareness and interest in conservation issues. As the saying goes, politicians serve the public; thus, heightened public demand for biodiversity conservation may encourage policymakers to listen to scientists more often. This interaction highlights the importance of addressing biases in data collection while recognizing the potential of community science to facilitate meaningful conversations around conservation.</p>
+<p>Despite these challenges, community science data plays a crucial role in bridging the gap between scientists and the public. As <span class="citation" data-cites="Young2014SciencePolicyDialogue">Young et al. (<a href="#ref-Young2014SciencePolicyDialogue" role="doc-biblioref">2014</a>)</span> note, communication between scientists and policymakers is riddled with challenges, but growing public interest in biodiversity conservation can help bridge that gap. When individuals actively engage in biodiversity monitoring, it produces public awareness and interest in conservation issues. As the saying goes, politicians serve the public; thus, heightened public demand for biodiversity conservation may encourage policymakers to listen to scientists more often. This interaction highlights the importance of addressing biases in data collection while recognizing the potential of community science to facilitate meaningful conversations around conservation.</p>
 </section>
 <section id="final-thoughts" class="level2">
 <h2 class="anchored" data-anchor-id="final-thoughts">Final thoughts</h2>
@@ -250,13 +271,38 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="personal-statement" class="level2">
 <h2 class="anchored" data-anchor-id="personal-statement">Personal statement</h2>
-<p>I have been a hobby birder for almost four years now. I have participated in community science projects such as the Christmas Bird Count and even led birding groups in the field.As a birder, I routinely use apps like eBird, iNaturalist, and Merlin to document the birds I find. After writing this blog I reflected on my own biases in my data collection. I definitely fall victim to recording exciting birds over common species. There is many a time I will not record a flock of mourning doves over a flock of mountain bluebirds (I love mountain bluebirds). I am guilty in seeking out birding locations for a chance to receive a life list bird (pileated woodpecker hello!).</p>
-<p><img src="me._birdbanding.png" class="img-fluid" alt="Birdbanding"> ADJUST SIZE</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="me._birdbanding.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Pictured: Me holding a Tufted Titmouse during a birdbanding demonstration at the Smithsonian Environmental Research Center.</figcaption>
+</figure>
+</div>
+<p>I have been a hobby birder for almost four years now. I have participated in community science projects such as the Christmas Bird Count, Big Days, and even led birding groups in the field. As a birder, I routinely use apps like eBird, iNaturalist, and Merlin to document the birds I find. After writing this blog post I reflected on my own biases in my data collection. I definitely fall victim to recording exciting birds over common species. There is many a time I will not record a flock of mourning doves over a flock of mountain bluebirds (I love mountain bluebirds). I am guilty in seeking out birding locations for a chance to receive a life list bird (pileated woodpecker).Thus said, I know the i</p>
+</section>
+<section id="references" class="level2">
+
+
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{segarra2025,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Callaghan2021_large_bodied" class="csl-entry" role="listitem">
+Callaghan, Corey T., Alistair G. B. Poore, Max Hofmann, Christopher J. Roberts, and Henrique M. Pereira. 2021. <span>“Large-Bodied Birds Are over-Represented in Unstructured Citizen Science Data.”</span> <em>Scientific Reports</em> 11: 19073. <a href="https://doi.org/10.1038/s41598-021-98584-7">https://doi.org/10.1038/s41598-021-98584-7</a>.
+</div>
+<div id="ref-EllisSoto2023_redlining_bird_sampling" class="csl-entry" role="listitem">
+Ellis-Soto, Diego, Melissa Chapman, and Dexter H. Locke. 2023. <span>“Historical Redlining Is Associated with Increasing Geographical Disparities in Bird Biodiversity Sampling in the United States.”</span> <em>Nature Human Behaviour</em> 7 (11): 1869–77. <a href="https://doi.org/10.1038/s41562-023-01688-5">https://doi.org/10.1038/s41562-023-01688-5</a>.
+</div>
+<div id="ref-Konno2024Bias" class="csl-entry" role="listitem">
+Konno, K., J. Gibbons, R. Lewis, and A. S. Pullin. 2024. <span>“Potential Types of Bias When Estimating Causal Effects in Environmental Research and How to Interpret Them.”</span> <em>Environmental Evidence</em> 13 (1): 1.
+</div>
+<div id="ref-ScherClark2023" class="csl-entry" role="listitem">
+Scher, Jonah, and John A. Clark. 2023. <span>“Species Traits and Observer Behaviors That Bias Data Assimilation: A Comparison of eBird and the Breeding Bird Survey.”</span> <em>Ecological Applications</em> 33 (1): e2815. <a href="https://doi.org/10.1002/eap.2815">https://doi.org/10.1002/eap.2815</a>.
+</div>
+<div id="ref-Young2014SciencePolicyDialogue" class="csl-entry" role="listitem">
+Young, J. C., K. A. Waylen, S. Sarkki, S. Albon, I. Bainbridge, E. Balian, J. Davidson, et al. 2014. <span>“Improving the Science-Policy Dialogue to Meet the Challenges of Biodiversity Conservation: Having Conversations Rather Than Talking at One-Another.”</span> <em>Biodiversity and Conservation</em> 23: 387–404. <a href="https://doi.org/10.1007/s10531-013-0607-0">https://doi.org/10.1007/s10531-013-0607-0</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{segarra2025,
   author = {Segarra, Isabella},
   title = {The {Bias} in {Birding}},
   date = {2025-12-10},

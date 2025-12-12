@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Isabella Segarra"
-  #favicon:images/favicon.png
+  #favicon: photo-of-me.png
   navbar:
     #logo:images/logo.png
     #logo-alt:

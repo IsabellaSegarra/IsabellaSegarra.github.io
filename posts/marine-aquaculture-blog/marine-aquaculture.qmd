@@ -372,8 +372,9 @@ rgn_table %>%
 ## Map: Oyster Suitable Area
 Now I will map the suitable locations for oyster marien aquaculture. 
 ```{r}
-
 #| label: oyster map
+#| message: false 
+
 oyster_map <-
   tm_basemap("Esri.WorldImagery") +
 tm_shape(eez_suitable_locations) +
@@ -502,6 +503,7 @@ In this section I will apply the `suitability_fun` function to my second focal s
 
 ```{r}
 #| label: Blue mussels function
+#| message: false 
 
 suitability_fun(
   sst_min = 5, # define min stt value
