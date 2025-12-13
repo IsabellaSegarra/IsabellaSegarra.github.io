@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Isabella Segarra">
-<meta name="dcterms.date" content="2025-12-06">
+<meta name="dcterms.date" content="2025-12-12">
 <meta name="description" content="Reproducible functions for assessing species for marine aquaculture.">
 
 <title>Assessing Potential Species for Marine Aquaculture in West Coast EEZs – Isabella Segarra</title>
@@ -224,7 +224,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 6, 2025</p>
+        <p class="date">December 12, 2025</p>
       </div>
     </div>
     
@@ -240,10 +240,10 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview-of-study" id="toc-overview-of-study" class="nav-link active" data-scroll-target="#overview-of-study">Overview of study</a></li>
+  <li><a href="#overview-of-analysis" id="toc-overview-of-analysis" class="nav-link active" data-scroll-target="#overview-of-analysis">Overview of analysis</a></li>
   <li><a href="#the-data-i-used" id="toc-the-data-i-used" class="nav-link" data-scroll-target="#the-data-i-used">The Data I Used</a>
   <ul class="collapse">
-  <li><a href="#species-data" id="toc-species-data" class="nav-link" data-scroll-target="#species-data">Species data</a></li>
+  <li><a href="#focal-species" id="toc-focal-species" class="nav-link" data-scroll-target="#focal-species">Focal Species</a></li>
   <li><a href="#sea-surface-temperature-data" id="toc-sea-surface-temperature-data" class="nav-link" data-scroll-target="#sea-surface-temperature-data">Sea Surface Temperature Data</a></li>
   <li><a href="#depth-data" id="toc-depth-data" class="nav-link" data-scroll-target="#depth-data">Depth Data</a></li>
   </ul></li>
@@ -251,10 +251,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#reclassificaiton-matrix" id="toc-reclassificaiton-matrix" class="nav-link" data-scroll-target="#reclassificaiton-matrix">Reclassificaiton Matrix</a></li>
   </ul></li>
-  <li><a href="#determine-the-most-suitable-eez" id="toc-determine-the-most-suitable-eez" class="nav-link" data-scroll-target="#determine-the-most-suitable-eez">Determine the most suitable EEZ</a>
-  <ul class="collapse">
-  <li><a href="#find-suitable-areas-within-west-coast-eezs" id="toc-find-suitable-areas-within-west-coast-eezs" class="nav-link" data-scroll-target="#find-suitable-areas-within-west-coast-eezs">Find suitable areas within West Coast EEZs</a></li>
-  </ul></li>
+  <li><a href="#determine-the-most-suitable-eez" id="toc-determine-the-most-suitable-eez" class="nav-link" data-scroll-target="#determine-the-most-suitable-eez">Determine the most suitable EEZ</a></li>
   <li><a href="#map-oyster-suitable-area" id="toc-map-oyster-suitable-area" class="nav-link" data-scroll-target="#map-oyster-suitable-area">Map: Oyster Suitable Area</a></li>
   <li><a href="#generalizable-function" id="toc-generalizable-function" class="nav-link" data-scroll-target="#generalizable-function">Generalizable function</a></li>
   <li><a href="#apply-function-blue-mussels" id="toc-apply-function-blue-mussels" class="nav-link" data-scroll-target="#apply-function-blue-mussels">Apply function: Blue Mussels</a></li>
@@ -269,21 +266,21 @@ div.csl-indent {
 
 
 
-<p>Have you ever thought about the environmental impact of the food you eat? If you’re anything like me, you may have tried going vegan or vegetarian at some point, hoping to reduce your carbon footprint by cutting out beef and other protein sources often linked to greenhouse gas emissions. While individual choices are important, solutions that are practical and scalable—like <em>marine aquaculture</em>—can have a far more direct and meaningful impact on mitigating climate change.</p>
+<p>Have you ever considered the environmental impact of the food you eat? If you’re anything like me, you may have tried going vegan or vegetarian at some point, hoping to reduce your carbon footprint by cutting out beef and other protein sources often linked to greenhouse gas emissions. While individual choices are important, solutions that are practical and scalable—like <em>marine aquaculture</em>—can have a far more direct and meaningful impact on mitigating climate change.</p>
 <p><em>What is marine aquaculture?</em></p>
 <p>“Marine aquaculture refers to the breeding, rearing, and harvesting of aquatic plants and animals. It can take place in the ocean, or on land in tanks and ponds.” (<span class="citation" data-cites="NOAA_Fisheries_2025">NOAA Fisheries (<a href="#ref-NOAA_Fisheries_2025" role="doc-biblioref">2025</a>)</span>).</p>
-<p>To many, farming in the ocean might sound novel—but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (<span class="citation" data-cites="Groesbeck2014">Groesbeck et al. (<a href="#ref-Groesbeck2014" role="doc-biblioref">2014</a>)</span>).</p>
-<p>As the demand for seafood increases, reliance soley on wild-caught populations, which has been ins teady decline since the 1980s (<span class="citation" data-cites="AquariumPacific_MarineAquaculture">Aquarium of the Pacific (<a href="#ref-AquariumPacific_MarineAquaculture" role="doc-biblioref">n.d.</a>)</span>) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (<span class="citation" data-cites="ArevaloMartinez2024">Arévalo-Martínez (<a href="#ref-ArevaloMartinez2024" role="doc-biblioref">2024</a>)</span>). It complements current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow.</p>
+<p>To many, farming in the ocean might sound novel, but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (<span class="citation" data-cites="Groesbeck2014">Groesbeck et al. (<a href="#ref-Groesbeck2014" role="doc-biblioref">2014</a>)</span>).</p>
+<p>As the demand for seafood increases, reliance solely on wild-caught populations, which has been in steady decline since the 1980s (<span class="citation" data-cites="AquariumPacific_MarineAquaculture">Aquarium of the Pacific (<a href="#ref-AquariumPacific_MarineAquaculture" role="doc-biblioref">n.d.</a>)</span>) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (<span class="citation" data-cites="ArevaloMartinez2024">Arévalo-Martínez (<a href="#ref-ArevaloMartinez2024" role="doc-biblioref">2024</a>)</span>). It compliments current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow.</p>
 <p>As mentioned by Gentry et.al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (<span class="citation" data-cites="Gentry2017">Gentry et al. (<a href="#ref-Gentry2017" role="doc-biblioref">2017</a>)</span>). The article mentioned that proper planning is key to successful marine aquaculture. That includes choosing the correct species based on environmental factors and the species’ suitability.</p>
-<section id="overview-of-study" class="level2">
-<h2 class="anchored" data-anchor-id="overview-of-study">Overview of study</h2>
-<p>In this study, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: <strong>oysters</strong> and <strong>blue mussels</strong>. Exclusive Economic Zones are regions of the ocean that are open for a country to explore. The U.S. West coast has five regions. (<span class="citation" data-cites="NOAA_EEZ_facts">NOAA Ocean Service (<a href="#ref-NOAA_EEZ_facts" role="doc-biblioref">2024</a>)</span>).</p>
+<section id="overview-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-analysis">Overview of analysis</h2>
+<p>In this analysis, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: <strong>oysters</strong> and <strong>blue mussels</strong>. Exclusive Economic Zones are regions of the ocean that are open for a country to explore and utilize for economic purposes. The U.S. West coast has five regions. (<span class="citation" data-cites="NOAA_EEZ_facts">NOAA Ocean Service (<a href="#ref-NOAA_EEZ_facts" role="doc-biblioref">2024</a>)</span>). Through the process of creating a <strong>generalizable function</strong>, I am able to visualize what suitable habitat is in reach for the country for marine aquaculture for any marine species.</p>
 </section>
 <section id="the-data-i-used" class="level2">
 <h2 class="anchored" data-anchor-id="the-data-i-used">The Data I Used</h2>
-<p>The data for this study includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster.</p>
-<section id="species-data" class="level3">
-<h3 class="anchored" data-anchor-id="species-data">Species data</h3>
+<p>The data for this analysis includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster.</p>
+<section id="focal-species" class="level3">
+<h3 class="anchored" data-anchor-id="focal-species">Focal Species</h3>
 <p>The two focal species for this study are oysters and blue mussels (<em>Mytilus edulis</em>). Both of these bivalve species are found in the Pacific ocean and have the ability to serve as a great protein source for marine aquaculture. I found their depth and temperature requirements from <span class="citation" data-cites="SeaLifeBase_47622">SeaLifeBase (<a href="#ref-SeaLifeBase_47622" role="doc-biblioref">n.d.</a>)</span> and <span class="citation" data-cites="Zagata2008_MytilusEdulis">Zagata et al. (<a href="#ref-Zagata2008_MytilusEdulis" role="doc-biblioref">2008</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -326,7 +323,7 @@ div.csl-indent {
 </section>
 <section id="sea-surface-temperature-data" class="level3">
 <h3 class="anchored" data-anchor-id="sea-surface-temperature-data">Sea Surface Temperature Data</h3>
-<p>I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA’s Daily Global Satellite Sea Surface Temperature anomaly <span class="citation" data-cites="NOAACoralReefWatch_SSTA">NOAA Coral Reef Watch (<a href="#ref-NOAACoralReefWatch_SSTA" role="doc-biblioref">n.d.</a>)</span>.</p>
+<p>I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA’s Daily Global Satellite Sea Surface Temperature anomaly <span class="citation" data-cites="NOAACoralReefWatch_SSTA">NOAA Coral Reef Watch (<a href="#ref-NOAACoralReefWatch_SSTA" role="doc-biblioref">n.d.</a>)</span>. I import this raster data as a raster stack with the <code>rast()</code> function from <code>terra</code>. While importing the data, I project the Coordinate Reference System (CRS) as <code>EPSG:4326</code>. This is the standard CRS for mapping.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -342,7 +339,7 @@ div.csl-indent {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="st">'sst_fp'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>I will process the sea surface temperature (SST) data in order to combine it with the depth data. The SST data needs to be averaged and converted into Celsius.</p>
+<p>As with much environmental data, the SST data needs to be wrangled before I can utilize it. Firstly, the SST needs to be averaged for the years 2008 to 2012 and then converted from Kelvin to Celsius. This step is helpful by creating a single SST measurement that can be compared with the temperature requirements for my focal species.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Data Wrangling......</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -358,13 +355,16 @@ div.csl-indent {
 </section>
 <section id="depth-data" class="level3">
 <h3 class="anchored" data-anchor-id="depth-data">Depth Data</h3>
-<p>I will use bathymetry data from the General Bathymetric Chart of the Oceans <span class="citation" data-cites="GEBCO2022">GEBCO Compilation Group (<a href="#ref-GEBCO2022" role="doc-biblioref">2022</a>)</span>.</p>
+<p>I will use bathymetry (depth) data from the General Bathymetric Chart of the Oceans <span class="citation" data-cites="GEBCO2022">GEBCO Compilation Group (<a href="#ref-GEBCO2022" role="doc-biblioref">2022</a>)</span>. This data also needs to be projected to the corrected CRS.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Import Depth Data......</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>depth <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"marine-aquaculture-blog"</span>, <span class="st">"data"</span>, <span class="st">"depth.tif"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">project</span>(<span class="st">"EPSG:4326"</span>) <span class="co"># project CRS</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
-<p>In this section, I matched the resolution (number and size of pixels) of depth to match <code>avg_sst_c</code>.</p>
+<p>In order to use the depth data with the sea surface temperature data, the resolution (number and size of pixels) and extent needs to match.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Crop depth raster......</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -402,6 +402,7 @@ div.csl-indent {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove 'depth_cropped' from environment</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="st">'depth_cropped'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>In order to work with this data spatially, the Coordinate Reference Systems need to match.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......CRS check......</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -419,10 +420,10 @@ div.csl-indent {
 </section>
 <section id="find-suitable-locations-for-species" class="level2">
 <h2 class="anchored" data-anchor-id="find-suitable-locations-for-species">Find suitable locations for species</h2>
-<p>In this section I will find suitable locations (area in km) that satisfy the specific sea surface temperature and depth range for oysters.</p>
+<p>With the sea surface temperature and depth data wrangled and ready to go, I will now find the suitable locations (area in km) that satisfy the specific sea surface temperature and depth range for oysters.</p>
 <section id="reclassificaiton-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="reclassificaiton-matrix">Reclassificaiton Matrix</h3>
-<p>In order to find suitable locations for the oyster, I need to reclassify <code>avvg_sst_c</code> and <code>depth</code> data into locations that are suitable for oysters. This process returns the cells in the raster that satisfy the criteria.</p>
+<p>In order to find suitable locations for the oyster, I need to reclassify <code>avg_sst_c</code> and <code>depth</code> data into locations that are suitable for oysters based on the specific requirements described in <code>Table 1. Species Information</code>. This is done with a <strong>reclassification matrix</strong>. This process simplifies the values within an object, it produces zeros and ones in the raster that satisfy specific criteria.</p>
 <ul>
 <li>1: suitable locations</li>
 <li>0: unsuitable locations</li>
@@ -475,12 +476,12 @@ div.csl-indent {
 <pre><code>Depth reclassified!</code></pre>
 </div>
 </div>
-<p>I now have suitable locations for the specific sea surface temperature and depth specifications for oysters.</p>
+<p>I now have suitable locations for the sea surface temperature and depth specifications for oysters. I will do some further wrangling in order to be able to use this data for mapping. This includes multiplying the reclassification matrices (<code>sst_rcl</code> and <code>depth_rcl</code>) so suitable cells within each raster (‘1’ values) are kept and unsuitable cells (‘0’ values) are filled with NA values. I then find the area of suitable locations by using the <code>expanse()</code> function from <code>terra</code> and specifying the units to be in kilometers.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Find suitable locations......</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiply reclassification matrices to find suitable locations</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># creates matrix of 0/1 where 0 = not suitable and 1 = suitable </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates matrix of 0/1 where 0 = not suitable and 1 = suitable </span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>suitable_locations <span class="ot">&lt;-</span> sst_rcl <span class="sc">*</span> depth_rcl </span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -495,8 +496,10 @@ div.csl-indent {
 </section>
 <section id="determine-the-most-suitable-eez" class="level2">
 <h2 class="anchored" data-anchor-id="determine-the-most-suitable-eez">Determine the most suitable EEZ</h2>
-<p>In this section, I will determine the total suitable area within each EEZ for oysters. This data is from <a href="https://www.marineregions.org/eez.php">Marineregions.org</a> <span class="citation" data-cites="FlandersMarineInstitute_EEZ">Flanders Marine Institute (<a href="#ref-FlandersMarineInstitute_EEZ" role="doc-biblioref">2025</a>)</span>.</p>
+<p>I will determine the total suitable area within each EEZ for oysters. This data is from <a href="https://www.marineregions.org/eez.php">Marineregions.org</a> <span class="citation" data-cites="FlandersMarineInstitute_EEZ">Flanders Marine Institute (<a href="#ref-FlandersMarineInstitute_EEZ" role="doc-biblioref">2025</a>)</span>. EEZ <em>vector</em> data is read in as an <code>sf</code> object. Before I use this dataframe with my <code>suitable_locations</code> raster object, I need to ensure the CRS is defined as the same CRS I projected my depth and SST data to (EPSG:4326).</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Import Data and Check CRS......</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
@@ -508,10 +511,9 @@ div.csl-indent {
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">warning</span>(<span class="st">"CRS does not match! Transforming required."</span>)</span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
-<section id="find-suitable-areas-within-west-coast-eezs" class="level3">
-<h3 class="anchored" data-anchor-id="find-suitable-areas-within-west-coast-eezs">Find suitable areas within West Coast EEZs</h3>
-<p>In this section I will find the suitable areas within West Coast EEZs.</p>
+<p>I will now use my <code>suitable_locations</code> data frame to find the suitable locations <em>within</em> each EEZ. This is accomplished by using the <code>terra</code> function <code>mask()</code> which produces a new raster object with values in <code>suitable_locations</code> that intersect with <code>eez</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Apply mask ......</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -527,6 +529,7 @@ div.csl-indent {
 <pre><code>Mask worked!</code></pre>
 </div>
 </div>
+<p>Now that I have the suitable regions within each EEZ (<code>eez_cells</code>). This is acompolished by calculating the area of each cell in <code>eez_cells</code> and rasterizing the <code>eez</code> object in order to use the <code>zonal()</code> function. <code>zonal()</code> is a function used to compute statistics with rasters. In this analysis, the function was used to keep cell areas only where EEZ cells are valid and sum them by EEZ.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Calculate total area ......</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -552,6 +555,8 @@ div.csl-indent {
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>area_by_eez<span class="ot">&lt;-</span> <span class="fu">zonal</span>(<span class="at">x =</span> eez_cells_area <span class="sc">*</span> eez_cells, <span class="at">z =</span> rast_eez, <span class="at">fun =</span> <span class="st">"sum"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#......Join data......</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>eez_suitable_locations <span class="ot">&lt;-</span> area_by_eez <span class="sc">%&gt;%</span></span>
@@ -565,6 +570,7 @@ div.csl-indent {
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co">#.....Convert to sf object....</span></span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>eez_suitable_locations <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(eez_suitable_locations)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -602,11 +608,12 @@ div.csl-indent {
 </div>
 </div>
 </section>
-</section>
 <section id="map-oyster-suitable-area" class="level2">
 <h2 class="anchored" data-anchor-id="map-oyster-suitable-area">Map: Oyster Suitable Area</h2>
-<p>Now I will map the suitable locations for oyster marien aquaculture.</p>
+<p>In order to visualize the suitable habitat for oysters by each EEZ, I will produce a map. Maps like the following are helpful because they can break down information, such as the information in <code>Table 2.Suitable Area for Oysters</code>, in a way that is easy to interpret.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>oyster_map <span class="ot">&lt;-</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_basemap</span>(<span class="st">"Esri.WorldImagery"</span>) <span class="sc">+</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(eez_suitable_locations) <span class="sc">+</span></span>
@@ -626,6 +633,7 @@ div.csl-indent {
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                </span>
 <span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># View map</span></span>
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>oyster_map </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -640,6 +648,8 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="generalizable-function">Generalizable function</h2>
 <p>Now that I have a worfklow for determining the suitable locations for oysters, I will create a generalizable function that can be applied to any species of interest. I will test this function for my second focal species <strong>blue mussels</strong>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function name and arguments </span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>suitability_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(sst_min, sst_max, depth_min, depth_max, species) {</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -732,11 +742,12 @@ div.csl-indent {
 <span id="cb24-90"><a href="#cb24-90" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(species_map) </span>
 <span id="cb24-91"><a href="#cb24-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-92"><a href="#cb24-92" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="apply-function-blue-mussels" class="level2">
 <h2 class="anchored" data-anchor-id="apply-function-blue-mussels">Apply function: Blue Mussels</h2>
-<p>In this section I will apply the <code>suitability_fun</code> function to my second focal species <strong>blue mussels</strong>.</p>
+<p>I will now apply the <code>suitability_fun</code> function to my second focal species <strong>blue mussels</strong> to view blue mussel’s suitable habitat within West Coast EEZs.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suitability_fun</span>(</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sst_min =</span> <span class="dv">5</span>, <span class="co"># define min stt value</span></span>
@@ -753,14 +764,11 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p><em>Reflection</em>: The map above depicts the suitable locations for blue mussel aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Washington. The rest of the California and Oregon coast contain less suitable locations probably due to the temperature range for blue mussels, who prefer colder temperatures.</p>
+<p><em>Reflection</em>: The map above depicts the suitable locations for blue mussel aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Washington. The rest of the California and Oregon coast contain less suitable locations probably due to the temperature range for blue mussels, whom prefer colder temperatures.</p>
 </section>
 <section id="final-thoughts" class="level2">
 <h2 class="anchored" data-anchor-id="final-thoughts">Final Thoughts</h2>
 <p>This project investigated the suitable habitats for two focal species –oyster and blue mussel– for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function <code>suitability_fun</code> can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter.</p>
-<ul>
-<li>mention the average of 2008 to 2012 (narrow time range, out of scope)</li>
-</ul>
 
 
 
@@ -804,13 +812,13 @@ Zagata, C., C. Young, J. Sountis, and M. Kuehl. 2008. <span>“Mytilus Edulis.�
   author = {Segarra, Isabella},
   title = {Assessing {Potential} {Species} for {Marine} {Aquaculture} in
     {West} {Coast} {EEZs}},
-  date = {2025-12-06},
+  date = {2025-12-12},
   url = {https://isabellasegarra.github.io/posts/marine-aqaculture-blog},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-segarra2025" class="csl-entry quarto-appendix-citeas" role="listitem">
 Segarra, Isabella. 2025. <span>“Assessing Potential Species for Marine
-Aquaculture in West Coast EEZs.”</span> December 6, 2025. <a href="https://isabellasegarra.github.io/posts/marine-aqaculture-blog">https://isabellasegarra.github.io/posts/marine-aqaculture-blog</a>.
+Aquaculture in West Coast EEZs.”</span> December 12, 2025. <a href="https://isabellasegarra.github.io/posts/marine-aqaculture-blog">https://isabellasegarra.github.io/posts/marine-aqaculture-blog</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

@@ -1,31 +1,30 @@
 ---
 title: "Assessing Potential Species for Marine Aquaculture in West Coast EEZs"
 description: "Reproducible functions for assessing species for marine aquaculture."
-date: 2025-12-6
-categories: [MEDS, R, data-viz, Geospatial] #add hyphen for multiple words
+date: 2025-12-12
+categories: [MEDS, R, data-viz, Geospatial] 
 image: images/image.png
-citation: # true if no link 
+citation: 
   url: https://isabellasegarra.github.io/posts/marine-aqaculture-blog
 draft: false
 draft-mode: linked
 bibliography: references.bib
 ---
 
-Have you ever thought about the environmental impact of the food you eat? If you’re anything like me, you may have tried going vegan or vegetarian at some point, hoping to reduce your carbon footprint by cutting out beef and other protein sources often linked to greenhouse gas emissions. While individual choices are important, solutions that are practical and scalable—like *marine aquaculture*—can have a far more direct and meaningful impact on mitigating climate change.
+Have you ever considered the environmental impact of the food you eat? If you’re anything like me, you may have tried going vegan or vegetarian at some point, hoping to reduce your carbon footprint by cutting out beef and other protein sources often linked to greenhouse gas emissions. While individual choices are important, solutions that are practical and scalable—like *marine aquaculture*—can have a far more direct and meaningful impact on mitigating climate change.
 
 *What is marine aquaculture?*
 
 "Marine aquaculture refers to the breeding, rearing, and harvesting of aquatic plants and animals. It can take place in the ocean, or on land in tanks and ponds." (@NOAA_Fisheries_2025).
 
-To many, farming in the ocean might sound novel—but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (@Groesbeck2014).
+To many, farming in the ocean might sound novel, but it’s actually been a part of life in some regions for thousands of years. The Kwakwaka’wakw, the Indigenous people of the Pacific Northwest Coast, living in northern Vancouver Island and mainland British Columbia, were known for harvesting clams in clam gardens, sustaining their populations for thousands of years (@Groesbeck2014).
 
-As the demand for seafood increases, reliance soley on wild-caught populations, which has been ins teady decline since the 1980s (@AquariumPacific_MarineAquaculture) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (@ArevaloMartinez2024). It complements current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow.
+As the demand for seafood increases, reliance solely on wild-caught populations, which has been in steady decline since the 1980s (@AquariumPacific_MarineAquaculture) is not sustainable. Marine aquaculture has become popular for its use as a more suitable protein option than land-based meat production and wild-caught sources, with some studies showing that marine aquaculture greenhouse gas emissions could be 40% lower than emissions from land-based aquaculture (@ArevaloMartinez2024). It compliments current wild fisheries, produces jobs, and can meet the demand for seafood as human populations continue to grow.
 
 As mentioned by Gentry et.al, limitations to marine aquaculture include ocean depth, marine protected areas, global fishing and shipping lanes, and environmental factors (@Gentry2017). The article mentioned that proper planning is key to successful marine aquaculture. That includes choosing the correct species based on environmental factors and the species' suitability.
 
-## Overview of study
-
-In this study, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: **oysters** and **blue mussels**. Exclusive Economic Zones are regions of the ocean that are open for a country to explore. The U.S. West coast has five regions. (@NOAA_EEZ_facts).
+## Overview of analysis
+In this analysis, I investigated where to prioritize marine aquaculture in the West Coast of the United States within Exclusive Economic Zones (EEZ) for two focal species: **oysters** and **blue mussels**. Exclusive Economic Zones are regions of the ocean that are open for a country to explore and utilize for economic purposes. The U.S. West coast has five regions. (@NOAA_EEZ_facts). Through the process of creating a **generalizable function**, I am able to visualize what suitable habitat is in reach for the country for marine aquaculture for any marine species. 
 
 ```{r}
 #| label: Library import
@@ -51,9 +50,9 @@ library(patchwork) # For plotting
 
 ## The Data I Used
 
-The data for this study includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster.
+The data for this analysis includes a shapefile for the West Coast EEZ, bathymetry (depth) raster, and sea surface temperature raster.
 
-### Species data
+### Focal Species
 
 The two focal species for this study are oysters and blue mussels (*Mytilus edulis*). Both of these bivalve species are found in the Pacific ocean and have the ability to serve as a great protein source for marine aquaculture. I found their depth and temperature requirements from @SeaLifeBase_47622 and @Zagata2008_MytilusEdulis.
 
@@ -84,7 +83,7 @@ species_table %>%
 ```
 
 ### Sea Surface Temperature Data
-I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA's Daily Global Satellite Sea Surface Temperature anomaly @NOAACoralReefWatch_SSTA.
+I will use average annual sea surface temperature (SST) from 2008 to 2012. The data is from NOAA's Daily Global Satellite Sea Surface Temperature anomaly @NOAACoralReefWatch_SSTA. I import this raster data as a raster stack with the `rast()` function from `terra`. While importing the data, I project the Coordinate Reference System (CRS) as `EPSG:4326`. This is the standard CRS for mapping. 
 
 ```{r}
 #| label: import SST 
@@ -104,7 +103,8 @@ sst <- rast(sst_fp) %>%
 rm(list = 'sst_fp')
 ```
 
-I will process the sea surface temperature (SST) data in order to combine it with the depth data. The SST data needs to be averaged and converted into Celsius.
+As with much environmental data, the SST data needs to be wrangled before I can utilize it. Firstly, the SST needs to be averaged for the years 2008 to 2012 and then converted from Kelvin to Celsius. This step is helpful by creating a single SST measurement that can be compared with the temperature requirements for my focal species. 
+
 ```{r}
 #| label: SST data wrangling 
 #......Data Wrangling......
@@ -121,13 +121,13 @@ rm(avg_sst)
 ```
 
 ### Depth Data
-
-I will use bathymetry data from the General Bathymetric Chart of the Oceans @GEBCO2022.
+I will use bathymetry (depth) data from the General Bathymetric Chart of the Oceans @GEBCO2022. This data also needs to be projected to the corrected CRS. 
 
 ```{r}
 #| label: Depth data import 
 #| output: false 
 #| message: false
+#| code-fold: true
 
 #......Import Depth Data......
 depth <- rast(here("posts", "marine-aquaculture-blog", "data", "depth.tif")) %>% 
@@ -135,7 +135,7 @@ depth <- rast(here("posts", "marine-aquaculture-blog", "data", "depth.tif")) %>%
 
 ```
 
-In this section, I matched the resolution (number and size of pixels) of depth to match `avg_sst_c`.
+In order to use the depth data with the sea surface temperature data, the resolution (number and size of pixels) and extent needs to match.
 
 ```{r}
 #| label: Depth data crop
@@ -174,7 +174,7 @@ if (all(res(depth) == res(avg_sst_c))) {
 rm(list = 'depth_cropped')
 
 ```
-
+In order to work with this data spatially, the Coordinate Reference Systems need to match. 
 ```{r}
 #| label: CRS check  
 #......CRS check......
@@ -188,12 +188,11 @@ if (crs(depth) != crs(avg_sst_c)) {
 ```
 
 ## Find suitable locations for species
-
-In this section I will find suitable locations (area in km) that satisfy the specific sea surface temperature and depth range for oysters.
+With the sea surface temperature and depth data wrangled and ready to go, I will now find the suitable locations (area in km) that satisfy the specific sea surface temperature and depth range for oysters.
 
 ### Reclassificaiton Matrix
 
-In order to find suitable locations for the oyster, I need to reclassify `avvg_sst_c` and `depth` data into locations that are suitable for oysters. This process returns the cells in the raster that satisfy the criteria.
+In order to find suitable locations for the oyster, I need to reclassify `avg_sst_c` and `depth` data into locations that are suitable for oysters based on the specific requirements described in `Table 1. Species Information`. This is done with a **reclassification matrix**. This process simplifies the values within an object, it produces zeros and ones in the raster that satisfy specific criteria. 
 
 -   1: suitable locations
 -   0: unsuitable locations
@@ -245,14 +244,14 @@ if (identical(values(depth), values(depth_rcl))) {
 }
 ```
 
-I now have suitable locations for the specific sea surface temperature and depth specifications for oysters.
+I now have suitable locations for the sea surface temperature and depth specifications for oysters. I will do some further wrangling in order to be able to use this data for mapping. This includes multiplying the reclassification matrices (`sst_rcl` and `depth_rcl`) so suitable cells within each raster ('1' values) are kept and unsuitable cells ('0' values) are filled with NA values. I then find the area of suitable locations by using the `expanse()` function from `terra` and specifying the units to be in kilometers. 
 
 ```{r}
 #| label: Suitable locations
 #......Find suitable locations......
 
 # Multiply reclassification matrices to find suitable locations
-# creates matrix of 0/1 where 0 = not suitable and 1 = suitable 
+# Creates matrix of 0/1 where 0 = not suitable and 1 = suitable 
 suitable_locations <- sst_rcl * depth_rcl 
 
 
@@ -266,13 +265,14 @@ suitable_area <- expanse(suitable_locations, unit = "km")
 
 ```
 
-## Determine the most suitable EEZ
 
-In this section, I will determine the total suitable area within each EEZ for oysters. This data is from [Marineregions.org](https://www.marineregions.org/eez.php) @FlandersMarineInstitute_EEZ.
+## Determine the most suitable EEZ
+I will determine the total suitable area within each EEZ for oysters. This data is from [Marineregions.org](https://www.marineregions.org/eez.php) @FlandersMarineInstitute_EEZ. EEZ *vector* data is read in as an `sf` object. Before I use this dataframe with my `suitable_locations` raster object, I need to ensure the CRS is defined as the same CRS I projected my depth and SST data to (EPSG:4326).
 
 ```{r}
 #| label: EEZ data import 
 #| output: false 
+#| code-fold: true
 
 #......Import Data and Check CRS......
 
@@ -287,10 +287,7 @@ if (st_crs(eez) == st_crs(4326)) {
 }
 
 ```
-
-### Find suitable areas within West Coast EEZs
-
-In this section I will find the suitable areas within West Coast EEZs.
+I will now use my `suitable_locations` data frame to find the suitable locations *within* each EEZ. This is accomplished by using the `terra` function `mask()` which produces a new raster object with values in `suitable_locations` that intersect with `eez`. 
 
 ```{r}
 #| label: Find suitable EEZs
@@ -306,6 +303,8 @@ if (ncell(suitable_locations) == ncell(eez_cells)) {
 }
 
 ```
+
+Now that I have the suitable regions within each EEZ (`eez_cells`). This is acompolished by calculating the area of each cell in `eez_cells` and rasterizing the `eez` object in order to use the `zonal()` function. `zonal()` is a function used to compute statistics with rasters. In this analysis, the function was used to keep cell areas only where EEZ cells are valid and sum them by EEZ. 
 
 ```{r}
 #| label: Calculate total area
@@ -330,11 +329,11 @@ rast_eez <- rasterize(eez, eez_cells, field = "rgn_id")
 # perform zonal operation 
 area_by_eez<- zonal(x = eez_cells_area * eez_cells, z = rast_eez, fun = "sum", na.rm = TRUE)
 
-
 ```
 
 ```{r}
 #| label: Join data
+#| code-fold: true
 #......Join data......
 
 eez_suitable_locations <- area_by_eez %>%
@@ -367,14 +366,15 @@ rgn_table %>%
   kable(col.names = c("Regions", "Suitable Habitat (km)"), caption = "Table 2. Suitable Area for Oysters") %>%
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 ```
-
 ## Map: Oyster Suitable Area
 
-Now I will map the suitable locations for oyster marien aquaculture.
+In order to visualize the suitable habitat for oysters by each EEZ, I will produce a map. Maps like the following are helpful because they can break down information, such as the information in `Table 2.Suitable Area for Oysters`, in a way that is easy to interpret. 
 
 ```{r}
 #| label: oyster map
 #| message: false 
+#| warning: false
+#| code-fold: true
 
 oyster_map <-
   tm_basemap("Esri.WorldImagery") +
@@ -396,7 +396,6 @@ tm_shape(eez_suitable_locations) +
 # View map
 oyster_map 
 ```
-
 The map above depicts the suitable locations for oyster aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Central and Southern California.
 
 ## Generalizable function
@@ -405,6 +404,7 @@ Now that I have a worfklow for determining the suitable locations for oysters, I
 
 ```{r}
 #| label: Generalizable function
+#| code-fold: true
 # Define function name and arguments 
 suitability_fun <- function(sst_min, sst_max, depth_min, depth_max, species) {
   
@@ -502,7 +502,7 @@ return(species_map)
 
 ## Apply function: Blue Mussels
 
-In this section I will apply the `suitability_fun` function to my second focal species **blue mussels**.
+I will now apply the `suitability_fun` function to my second focal species **blue mussels** to view blue mussel's suitable habitat within West Coast EEZs. 
 
 ```{r}
 #| label: Blue mussels function
@@ -519,10 +519,9 @@ suitability_fun(
 
 ```
 
-*Reflection*: The map above depicts the suitable locations for blue mussel aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Washington. The rest of the California and Oregon coast contain less suitable locations probably due to the temperature range for blue mussels, who prefer colder temperatures.
+*Reflection*: The map above depicts the suitable locations for blue mussel aquaculture within West Coast EEZs. As you can see, the regions with the most suitable habitat are Washington. The rest of the California and Oregon coast contain less suitable locations probably due to the temperature range for blue mussels, whom prefer colder temperatures.
 
 ## Final Thoughts
 
 This project investigated the suitable habitats for two focal species --oyster and blue mussel-- for marine aquaculture in West Coast Economic Exclusive Zones. Although I only mapped two species, the function `suitability_fun` can be used on a variety of species of interest for marine aquaculture. This analysis provides insight into the work needed to plan for marine aquaculture sites. Although I only include sea surface temperature and depth as specifications for suitability, as mentioned in Gentry et.al, there are many more factors that are of importance for assessing suitability of species. Additionally, as sea surface temperatures continue to rise due to climate change, the suitability for these species may alter.
 
-- mention the average of 2008 to 2012 (narrow time range, out of scope)
