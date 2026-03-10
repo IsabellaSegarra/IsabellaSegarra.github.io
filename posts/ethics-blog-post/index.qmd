@@ -16,7 +16,7 @@ Birding isn’t just a hobby anymore; it is a powerful way for the public to con
 In this blog, I will explore the biases found in popular birding platforms and surveys, and how they shape community science data. The platforms and surveys mentioned in this blog include the following:
 
 | Platform/Survey | Description | Sampling design |
-|--------------------------|--------------------|--------------------------|
+|----|----|----|
 | **iNaturalist** | [iNaturalist](https://www.inaturalist.org/) is a multi-taxon community science project from the California Academy of Sciences. | Less-structured (Callaghan et al. 2021) |
 | **eBird** | [eBird](https://ebird.org/home) is a strictly birding community science project launched by the Cornell Lab of Ornithology. | Semi-structured (Callaghan et al. 2021) and less structured compared to BBS (Scher and Clark 2023) |
 | **Breeding Bird Survey (BBS)** | The [BBS](https://www.pwrc.usgs.gov/bbs/) is an annual birding survey in the United States and Canada. | Most structured (Scher and Clark 2023) |

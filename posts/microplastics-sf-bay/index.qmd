@@ -1,13 +1,13 @@
 ---
 title: "Seven Trillion Pieces and Counting"
 description: "An infographic on microplastics in San Francisco Bay Estuary"
-date: 2026-3-9
+date: 2026-03-09
 categories: [MEDS, R, data-viz] #add hyphen for multiple words
 #image: images/site_image.png 
 citation: # true if no link 
   url: https://isabellasegarra.github.io/posts/microplastics-sf-bay
 draft: false
-draft-mode: linked
+#draft-mode: linked
 #bibliography: references.bib
 ---
 
