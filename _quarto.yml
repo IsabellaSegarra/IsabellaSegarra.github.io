@@ -12,11 +12,11 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - resources.qmd
+#      - about.qmd
+#      - resources.qmd
       - posts.qmd
-      - href: resources.qmd
-        text: Resources
+#      - href: resources.qmd
+#        text: Resources
       - icon: github 
         href: https://github.com/IsabellaSegarra/IsabellaSegarra.github.io
     page-footer: 
@@ -28,7 +28,7 @@ format:
     theme: styles.scss
     toc: true
     page-layout: full
-    mainfont: Josefin Sans 
+#    mainfont: Josefin Sans 
 
 editor: visual
 
