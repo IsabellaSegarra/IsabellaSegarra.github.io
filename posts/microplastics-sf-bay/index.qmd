@@ -15,34 +15,38 @@ draft: false
 
 My motivation for this piece started with a simple question: "What do we actually know about plastic pollution in California?" That search led me to a dataset from the San Francisco Estuary Institute, a comprehensive three-year study on microplastic and microparticle pollution in the San Francisco Bay Estuary. I read the executive summary, scrolled through 400+ pages of its associated technical reports, and thought it would be interesting to bring the findings of this study to life.
 
-## The infographic 
+## The infographic
+
 For my infographic, I wanted to answer the following questions:
 
 *Overarching question*: What are the sources and composition of microplastics in the SF Bay Estuary?
 
 *Additional question 1.* What types of plastic dominate in each sampling environment?
 
-*Additional question 2.* What is the size distribution of microplastic particles across plastic types? 
+*Additional question 2.* What is the size distribution of microplastic particles across plastic types?
 
 *Additional question 3.* What plastic types are found in fish tissue?
 
-*Additional question 4* What sampling environments had the most microplastics? 
+*Additional question 4* What sampling environments had the most microplastics?
 
 ![infographic](images/infographic_draft_1.png)
 
 ## Translating polyethylene into plastic bags
-Scientific studies on plastic pollution don't talk about styrofoam, they talk about *polystyrene*. As someone with no background in the technical language of microplastics, one of my biggest challenges was translating dense scientific terminology into something myself and a general audience could understand. This challenge felt worthwhile, after all the San Francisco Bay is one of the most urbanized estuaries in the world, and the people living around it are part of the ecosystem too, contributing to the microplastics of this study. 
+
+Scientific studies on plastic pollution don't talk about styrofoam, they talk about *polystyrene*. As someone with no background in the technical language of microplastics, one of my biggest challenges was translating dense scientific terminology into something myself and a general audience could understand. This challenge felt worthwhile, after all the San Francisco Bay is one of the most urbanized estuaries in the world, and the people living around it are part of the ecosystem too, contributing to the microplastics of this study.
 
 ## Visual elements
-To visualize the findings of this study, I used the technical report as a guide for what to highlight, but I also let the data speak for itself. The goal was five visualizations, each simple enough to stand alone while together telling a complete story about microplastics. 
 
-A main challenge of this piece was balancing the visual elements. I decided to place the alluvial graph center since it takes up the most space and include the surrounding elements as additional information. 
+To visualize the findings of this study, I used the technical report as a guide for what to highlight, but I also let the data speak for itself. The goal was five visualizations, each simple enough to stand alone while together telling a complete story about microplastics.
 
-Much of the data was categorical and I originally had specific colors for each sample medium. I decided to limit to six main colors for the plastic types I am using to tell this story in order to lead to less visual clutter as well as home in on the main theme of this piece. 
+A main challenge of this piece was balancing the visual elements. I decided to place the alluvial graph center since it takes up the most space and include the surrounding elements as additional information.
+
+Much of the data was categorical and I originally had specific colors for each sample medium. I decided to limit to six main colors for the plastic types I am using to tell this story in order to lead to less visual clutter as well as home in on the main theme of this piece.
 
 *All visualizations were made with {ggplot2} and arranged in Affinity designer.*
 
 ## The code
+
 ```{r}
 #| eval: false
 #| echo: true
@@ -293,6 +297,3 @@ density_ridge_plot
 # Turn off showtext
 showtext_auto(enable = FALSE)
 ```
-
-
-
