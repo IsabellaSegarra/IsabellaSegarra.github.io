@@ -35,13 +35,119 @@ For my infographic, I wanted to answer the following questions:
 
 Scientific studies on plastic pollution don't talk about styrofoam, they talk about *polystyrene*. As someone with no background in the technical language of microplastics, one of my biggest challenges was translating dense scientific terminology into something myself and a general audience could understand. This challenge felt worthwhile, after all the San Francisco Bay is one of the most urbanized estuaries in the world, and the people living around it are part of the ecosystem too, contributing to the microplastics of this study.
 
+### Wrangling and re-categorizing 
+Many of the categories for the data I changed to . 
+
+
+Below is a snippet of my data wrangling. This process was first executed in my exploration file and then streamlined into a function later.
+
+```{r}
+#| eval: false
+
+material_type_refined = case_when(
+        plastic_type %in% c(
+          "Polyethylene", "Polypropylene", "Polyethylene/polypropylene copolymer",
+          "Polystyrene", "Polyethylene terephthalate", "Polyvinyl chloride",
+          "Polycarbonate", "Acrylonitrile butadiene styrene", "Polycaprolactone"
+        ) ~ "Common Synthetic Plastics",
+
+        plastic_type %in% c(
+          "Polyester", "Nylon", "Acrylic", "Polyurethane",
+          "Polystyrene/acrylic copolymer"
+        ) ~ "Synthetic Fibers & Textiles",
+
+        plastic_type %in% c(
+          "Polytetrafluoroethylene", "Polyether block amide", "Poly(Aryletherketone)",
+          "Polyvinyl butyral", "Fluoroelastomer", "Ethylene/vinyl acetate copolymer",
+          "Polyethylene terephthalate/polyurethane", "Polyethylene co-acrylic acid",
+          "Methyl vinyl ether copolymers", "Polyacrolein", "Polyethylenimine",
+          "Polyvinyl ether", "Phenolic resin"
+        ) ~ "Industrial & Specialty Polymers",
+
+        plastic_type %in% c(
+          "Polyvinyl acetate", "Polyvinyl alcohol", "Cellulose acetate",
+          "Paint", "Stearates, Lubricants, Waxes", "Silicone", "Asphalt"
+        ) ~ "Other",
+
+        plastic_type %in% c(
+          "Cotton", "Wool", "Cellulosic", "Organic natural material",
+          "Inorganic natural material"
+        ) ~ "Natural Materials",
+
+        plastic_type %in% c(
+          "Rubber", "Unknown Potentially Rubber"
+        ) ~ "Rubber",
+
+        plastic_type %in% c(
+          "Anthropogenic (cellulosic)", "Anthropogenic (protein base)",
+          "Anthropogenic (synthetic)", "Anthropogenic (unknown base)",
+          "Glass", "Not Characterized", "Unknown", "Styrene copolymer"
+        ) ~ "Unidentified plastic",
+
+        .default = "Uncategorized"
+      ) %>% 
+      # Create area column
+      mutate(area_mm = length_mm * width_mm)
+   
+```
+
+
 ## Visual elements
 
 To visualize the findings of this study, I used the technical report as a guide for what to highlight, but I also let the data speak for itself. The goal was five visualizations, each simple enough to stand alone while together telling a complete story about microplastics.
 
-A main challenge of this piece was balancing the visual elements. I decided to place the alluvial graph center since it takes up the most space and include the surrounding elements as additional information.
+### Alluvial graph 
+A main challenge of this piece was balancing the visual elements. I decided to place the alluvial graph center since it takes up the most space and requires the most time to understand the findings. All surrounding graphs are included as additional information.
 
-Much of the data was categorical and I originally had specific colors for each sample medium. I decided to limit to six main colors for the plastic types I am using to tell this story in order to lead to less visual clutter as well as home in on the main theme of this piece.
+### Colors 
+Much of the data was categorical and I originally had specific colors for each sampling environment (wastewater,. I decided to limit to six main colors for the plastic types I am using to tell this story in order to lead to less visual clutter as well as home in on the main theme of this piece.
+
+### Text
+When to 
+
+::: panel-tabset
+## Graphic Form
+
+**Graphic Form:** 
+
+## Text
+
+**Text:**
+
+## Icons
+
+**Icons:**
+
+## Themes
+
+**Themes:**
+
+## Colors
+
+**Colors:**
+
+## Typography
+
+**Typography:**
+
+## General Design
+
+**General Design:**
+
+## Data Context
+
+**Data Context:** 
+
+**Message:**
+
+## Accessibility
+
+**Accessibility:**
+
+## DEI
+
+**Diversity, Equity, and Inclusion (DEI):**
+:::
 
 *All visualizations were made with {ggplot2} and arranged in Affinity designer.*
 
