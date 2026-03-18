@@ -96,7 +96,8 @@ The sizes of microplastic may not be of interest to most, however when you consi
 
 ![Density ridge plot of plastic sizes](images/density_ridge.png){width="60%"}
 
-## Additional details
+## Additional design elements
+Explore the design elements I considered for this infographic. 
 
 ::: panel-tabset
 ## Text
@@ -132,7 +133,7 @@ The sizes of microplastic may not be of interest to most, however when you consi
 
 *All visualizations were made with {ggplot2} and arranged in Affinity designer.*
 
-## The code
+## Explore my code
 
 ```{r}
 #| eval: false
@@ -384,3 +385,6 @@ density_ridge_plot
 # Turn off showtext
 showtext_auto(enable = FALSE)
 ```
+
+# Data Citation
+San Francisco Estuary Institute. (2014–2018). Microplastic and microparticle data from surface water: San Francisco Bay and adjacent sanctuaries [Dataset]. California Natural Resources Agency Open Data. https://data.cnra.ca.gov/dataset/microplastic-sf-bay
