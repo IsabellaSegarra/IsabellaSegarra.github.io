@@ -29,7 +29,8 @@ For my infographic, I wanted to answer the following questions:
 
 *Additional question 4* What sampling environments had the most microplastics?
 
-![Final Infographic: Microplastic Pollution in San Francisco Bay Estuary](images/eds240_final_infographic.jpeg){fig-alt="An infographic depicting microplastic pollution with five graphs and associated text."}
+![Final Infographic: Microplastic Pollution in San Francisco Bay Estuary](images/eds240_final_infographic.jpeg.jpg){fig-alt="An infographic depicting microplastic pollution with five graphs and associated text."}
+
 
 ## Translating polyethylene into plastic bags
 
