@@ -13,12 +13,13 @@ $purple: #985D73;
 $darkpurple: #251f25;
 $lightpink: #f7e1d7;
 $lightgreen: #b0c4b1;
+$bgpink: #faeee8; 
 
 // quarto variables
 $navbar-bg: $darkpurple;
 $navbar-fg: $lightpink;
 $navbar-hl: $lightpink;
-$body-bg: $lightpink;
+$body-bg: $bgpink;
 
 /*-- scss:rules --*/
 h1, h2, h3, h4 {
