@@ -3,7 +3,7 @@ title: "Isabella Segarra"
 toc: false 
 image: photo-of-me.png
 about:
-  template: solana
+  template: trestles
   image-shape: round
   image-width: 17em
   links:
