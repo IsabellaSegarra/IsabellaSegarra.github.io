@@ -10,8 +10,20 @@ draft: false
 #draft-mode: linked
 #bibliography: references.bib
 ---
+## Background 
+
+Small particles. Big issue. From doing your laundry to driving your car — you're contributing to a plastic crisis in plain (microscopic) sight.
+
+Microplastics are synthetic particles smaller than 5mm that enter the environment through everyday activities such as washing synthetic clothing, tire wear, and the breakdown of larger plastic waste. Once released, they accumulate in our environment, from waterways to soil to the food chain, and even our bodies. Despite their invisibility to the naked eye, microplastics are now found in virtually every ecosystem on Earth, making them one of the most widespread and understudied pollution crises of our time.
+
+*What does the microplastic crisis look like in the San Francisco Bay?*
+
+## Motivation
 
 My motivation for this piece started with a simple question: "What do we actually know about plastic pollution in California?" That search led me to a dataset from the San Francisco Estuary Institute, a comprehensive three-year study on microplastic and microparticle pollution in the San Francisco Bay Estuary. I read the executive summary, scrolled through 400+ pages of its associated technical reports, and thought it would be interesting to bring the findings of this study to life.
+
+## The Data
+The dataset used in this infographic was from a comprehensive study on microplastics between the San Francisco Estuary Institute [(SEFI)](https://www.sfei.org/) and [5 Gyres Institute](https://www.5gyres.org/). 
 
 ## The infographic
 
@@ -388,3 +400,4 @@ showtext_auto(enable = FALSE)
 
 # Data Citation
 San Francisco Estuary Institute. (2014–2018). Microplastic and microparticle data from surface water: San Francisco Bay and adjacent sanctuaries [Dataset]. California Natural Resources Agency Open Data. https://data.cnra.ca.gov/dataset/microplastic-sf-bay
+
