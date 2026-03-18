@@ -11,8 +11,6 @@ draft: false
 #bibliography: references.bib
 ---
 
-## Seven Trillion Pieces and Counting
-
 My motivation for this piece started with a simple question: "What do we actually know about plastic pollution in California?" That search led me to a dataset from the San Francisco Estuary Institute, a comprehensive three-year study on microplastic and microparticle pollution in the San Francisco Bay Estuary. I read the executive summary, scrolled through 400+ pages of its associated technical reports, and thought it would be interesting to bring the findings of this study to life.
 
 ## The infographic
@@ -83,8 +81,6 @@ To visualize the raw plastic types found in the Bay, I used a bubble chart via t
 ### Fish bar graph
 
 This piece was originally a bar chart that I then used as a clipping mask in Affinity designer. I always knew I wanted to highlight the plastic pollution impacting fish as someone who eats anchovies caught in the Pacific. I wanted it to feel visceral rather than reduced to another callout stat.
-
-as someone who eats anchovies caught in the Pacific ocean.
 
 The original bar chart:
 
