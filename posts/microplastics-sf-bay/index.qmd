@@ -1,7 +1,7 @@
 ---
 title: "Seven Trillion Pieces and Counting"
 description: "An infographic on microplastics in San Francisco Bay Estuary"
-date: 2026-03-09
+date: 2026-03-17
 categories: [MEDS, R, data-viz] #add hyphen for multiple words
 image: images/home.jpeg 
 citation: # true if no link 
@@ -29,13 +29,14 @@ For my infographic, I wanted to answer the following questions:
 
 *Additional question 4* What sampling environments had the most microplastics?
 
-![infographic](images/infographic_draft_1.png)
+![Final Infographic: Microplastic Pollution in San Francisco Bay Estuary](images/eds240_final_infographic.jpeg){fig-alt="An infographic depicting microplastic pollution with five graphs and associated text."}
 
 ## Translating polyethylene into plastic bags
 
 Scientific studies on plastic pollution don't talk about styrofoam, they talk about *polystyrene*. As someone with no background in the technical language of microplastics, one of my biggest challenges was translating dense scientific terminology into something myself and a general audience could understand. This challenge felt worthwhile, after all the San Francisco Bay is one of the most urbanized estuaries in the world, and the people living around it are part of the ecosystem too, contributing to the microplastics of this study.
 
-### Wrangling and re-categorizing 
+### Wrangling and re-categorizing
+
 Many of the categories for the data I changed to be more easy to understand for a general audience. This involved regrouping plastic types like *polyester* into *synthetic fibers & textiles*. Below is a snippet of this process.
 
 ```{r}
@@ -62,25 +63,48 @@ material_type_refined = case_when(
         ) ~ "Industrial & Specialty Polymers")
 ```
 
-
 ## Visual elements
 
 To visualize the findings of this study, I used the technical report as a guide for what to highlight, but I also let the data speak for itself. The goal was five visualizations, each simple enough to stand alone while together telling a complete story about microplastics.
 
-### Alluvial graph 
-Balancing visual elements was a core challenge, the alluvial plot anchors the center since it demands the most space and interpretation time, with surrounding visuals serving as supporting context. Though I risk the interpretability from the piece alone, I use surrounding text to anchor the message. The alluvial form was intentional: its flowing lines mirror the literal movement of plastic from source to sampling environment. The chart reads left to right, where flow width represents quantity. 
+### Alluvial graph
 
-![Alluvial graph depicting plastic type and sampling environment](images/alluvial_graph.png)
-### Bubble chart
-To show raw plastic types found in the Bay, I used a bubble chart via the {packcircles} package. Initially each bubble had a unique color, but as my central argument clarified — that synthetic fibers and common synthetic plastics dominate microplastic pollution — I aligned the colors with the categories used in the alluvial plot for consistency.
+Balancing visual elements was a core challenge, the alluvial plot anchors the center since it demands the most space and interpretation time, with surrounding visuals serving as supporting context. Though I risk the interpretability from the piece alone, I use surrounding text to anchor the message. The alluvial form was intentional: its flowing lines mirror the literal movement of plastic from source to sampling environment. The chart reads left to right, where flow width represents quantity.
 
-![Bubble chart of top 5 common plastic types](images/bubble_chart.png)
+![Alluvial graph depicting plastic type and sampling environment](images/alluvial_graph.png){width="70%"}
+
+### Bubble graph
+
+To visualize the raw plastic types found in the Bay, I used a bubble chart via the {packcircles} package. Initially each bubble had a unique color, but as my central argument clarified — that synthetic fibers and common synthetic plastics dominate microplastic pollution — I aligned the colors with the categories used in the alluvial plot for consistency.
+
+![Bubble chart of top 5 common plastic types](images/bubble_chart.png){width="50%"}
+
+### Fish bar graph
+
+This piece was originally a bar chart that I then used as a clipping mask in Affinity designer. I always knew I wanted to highlight the plastic pollution impacting fish as someone who eats anchovies caught in the Pacific. I wanted it to feel visceral rather than reduced to another callout stat.
+
+as someone who eats anchovies caught in the Pacific ocean.
+
+The original bar chart:
+
+![Bar chart of plastic types found in fish tissue](images/fish_bar_chart.png){width="70%"}
+
+This was then clipped to the following outline of a Northern Anchovy:
+
+![Outline of northern anchovy](images/no_achovy.png){width="40%"}
+
+### Density graph
+
+The sizes of microplastic may not be of interest to most, however when you consider the magnitude of a problem you can barely see, it is worth highlighting the size. I used a density ridge plot to show the size distribution across plastic types, and there's a happy accident in the form: the ridges themselves could look like accumulating piles of plastic.
+
+![Density ridge plot of plastic sizes](images/density_ridge.png){width="60%"}
+
+## Additional details
 
 ::: panel-tabset
-
 ## Text
 
-**Text:** I used the surrounding text to help clarify the findings of the chart. I am assuming a person has no 
+**Text:** I used the surrounding text to 1) help clarify the findings of the chart and 2) serve as a legend by coloring the text according to the categories.
 
 ## Colors
 
@@ -90,24 +114,23 @@ To show raw plastic types found in the Bay, I used a bubble chart via the {packc
 
 ## Typography
 
-**Typography:** The font used in this piece was Hanken Grotesk. 
+**Typography:** The font used in this piece was Hanken Grotesk. I felt that the font was clean, readable even when small and inviting.
 
-## General Design
-
-**General Design:** My infographic is meant to be read from top to bottom. With your eyes draw to 
 ## Data Context
 
-**Data Context:** 
+**Data Context:** For my infographic, background information about the data was necessary since my focus was the context of the comprehensive study and the associated organizations behind it. I also needed to clarify what exactly defines a microplastic and microparticle. Other data context such as sampling environments needed to be explicit since the original dataset's naming conventions were not as intutitive to a general audience.
 
-**Message:**
+## Message
+
+**Message:** This piece aims to convey the scale of microplastic pollution in the San Francisco Bay Estuary. While the study captures only a fraction of the full problem, it offers a window into the everyday items behind it: clothing, packaging, tires. The groupings show how much of each category is present, but the real story is in what those categories represent.
 
 ## Accessibility
 
-**Accessibility:** My infographic is mostly colorblind friendly. I chose to color the two most prominant plastic types - common synthetic plastics and synthetic fibers with colors that have the most contrast. 
+**Accessibility:** My info graphic is mostly colorblind friendly. I chose to color the two most prominant plastic types - common synthetic plastics and synthetic fibers with colors that have the most contrast.
 
 ## DEI
 
-**Diversity, Equity, and Inclusion (DEI):**
+**Diversity, Equity, and Inclusion (DEI):** To ground the piece geographically, I included a map of the San Francisco Bay Area showing the urbanized communities that make up the estuary's watershed. Microplastic pollution doesn't exist in isolation, it reflects the consumption patterns and infrastructure of the people living alongside the Bay, many of whom most vulnerable to its effects.
 :::
 
 *All visualizations were made with {ggplot2} and arranged in Affinity designer.*
