@@ -1,0 +1,35 @@
+---
+Title: "Explore my portfolio"
+format:
+  html:
+    css: styles.css
+    lightbox: true
+    page-layout: full
+    grid: 
+      body-width: 2000px
+      sidebar-width: 200px
+      margin-width: 200px
+editor_options: 
+  chunk_output_type: console
+---
+# Explore my portfolio
+I love creating stories from data.
+
+## Visualizations
+
+::::: gallery
+<!-- Infographic  -->
+
+<a href="#alaska-temp-chart" class="lightbox-thumbnail"> ![Microplastics infographic](images/portfolio/eds240_final_infographic.jpg){.thumbnail} </a>
+
+:::: {#alaska-temp-chart .lightbox}
+<a href="#" class="close">X</a> <a href="#stream-temp-chart" class="next">→</a>
+
+::: overlay
+:::
+
+<!-- Overlay Background --> <img src="images/portfolio/alaska-temp-chart-T.png" alt="Alaska June &amp; July Average Temperature Anomaly"/>
+
+<p>Created for Woodwell Climate Research Center, designed in R.</p>
+::::
+:::::

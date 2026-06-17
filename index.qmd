@@ -1,7 +1,7 @@
 ---
 title: "Isabella Segarra"
 toc: false 
-image: photo-of-me.png
+image: Isabella_Cover.JPG
 about:
   template: trestles
   image-shape: round
@@ -20,6 +20,33 @@ about:
       icon: envelope 
 ---
 
-## Hi there!
+<h1>Hi! I'm Isabella. </h1>
 
-I'm Isabella Segarra , an environmental data scientist and MEDS student at UC Santa Barbara's Bren School. My path started at UC Merced in the Central Valley, where environmental science led me into the field: fungal ecology, phenology, and my own grassland invasive species research. When my curiosity outpaced any single discipline, I turned to data as the throughline, a way to study the ecosystems I love. Outside of research, I'm logging miles toward my next marathon (2 full, 2 half), digging through used bookstores, and hunting for thrift finds.
+I am an environmental data scientist with a Master's in Environmental Data Science. I am passionate about turning data into stories, action, and change. My background spans field research, water quality monitoring, program coordination, and quantitative analysis — including leveraging bird observations to evaluate California's 30x30 conservation framework. Ask me about agroecology and birds!
+
+--- 
+
+### Education
+
+**Master of Environmental Data Science** (Expected June 2026) <br>Bren School of Environmental Science & Management @ University of California, Santa Barbara (UCSB)
+
+**Bachelor of Science in Environmental Science** (2023) <br> University of California, Merced @ Merced, CA
+
+--- 
+
+### Experience
+
+**Master's Capstone Project** (January 2026 - June 2026) <br> Title: *Mind the GAP: Avian Responses to Conservation Investments in California* <br> Bren School of Environmental Science & Management
+
+**Social Media and Communications** (2024 - Present) <br> Multinational Exchange for Sustainable Agriculture
+
+**Student Assistant** (2022 - 2024) <br> Merced Vernal Pools and Grassland Reserve
+
+**Research Intern** (Febuary - May 2024) <br> Smithsonian Environmental Research Center
+
+**Field and Lab Intern** (2021 - 2024) <br> Fungal Ecology, Agroecology, Plant Science @ UC Merced
+
+--- 
+### Fun Facts!
+I love to run! I have ran 2 half marathons (PR: 1:33) and 3 full marathons (PR: 3:19). 
+
