@@ -1,5 +1,5 @@
 ---
-Title: "Explore my portfolio"
+Title: "Portfolio"
 format:
   html:
     css: styles.css
@@ -13,23 +13,56 @@ editor_options:
   chunk_output_type: console
 ---
 # Explore my portfolio
-I love creating stories from data.
 
 ## Visualizations
+I love creating stories from data.
 
-::::: gallery
-<!-- Infographic  -->
+::: {.gallery}
 
-<a href="#alaska-temp-chart" class="lightbox-thumbnail"> ![Microplastics infographic](images/portfolio/eds240_final_infographic.jpg){.thumbnail} </a>
+<div class="gallery">
 
-:::: {#alaska-temp-chart .lightbox}
-<a href="#" class="close">X</a> <a href="#stream-temp-chart" class="next">→</a>
+  <!-- Microplastics Infographic -->
+  <a href="#microplastics" class="lightbox-thumbnail">
+    ![Microplastics in SF Bay Estuary](images/portfolio/eds240_final_infographic.jpg){.thumbnail}
+  </a>
 
-::: overlay
-:::
+  <!-- GBIF Threatened Species Infographic -->
+  <a href="#gbif-species" class="lightbox-thumbnail">
+    ![GBIF Threatened Species](images/portfolio/gbif_threatened_species_countries_bar_chart.png){.thumbnail}
+  </a>
 
-<!-- Overlay Background --> <img src="images/portfolio/alaska-temp-chart-T.png" alt="Alaska June &amp; July Average Temperature Anomaly"/>
+</div>
 
-<p>Created for Woodwell Climate Research Center, designed in R.</p>
-::::
-:::::
+<div id="microplastics" class="lightbox">
+  <a href="#" class="close">X</a>
+  <a href="#gbif-species" class="next">→</a>
+  <div class="overlay"></div>
+  <img src="images/portfolio/eds240_final_infographic.jpg" alt="Microplastics in coastal waters infographic">
+  <p>Infographic charts created in R studio and assembled with Affinity Designer. Data from San Francisco Estuary Institute and 5 Gyres Institute.</p>
+</div>
+
+<div id="gbif-species" class="lightbox">
+  <a href="#" class="close">X</a>
+  <a href="#microplastics" class="next">→</a>
+  <div class="overlay"></div>
+  <img src="images/portfolio/gbif_threatened_species.png" alt="GBIF threatened species infographic">
+  <p> Bar chart of threatened species observations in South America. Data from GBIF (Global Biodiversity Information Facility).</p>
+</div>
+
+::: 
+
+## Interactive 
+
+#### BirdWatch Storymap
+<iframe src="https://petervitale910.shinyapps.io/shiny_dashboard/" 
+        width="100%" height="500" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+        
+#### Water Quality Monitoring Storymap
+<iframe src="https://storymaps.arcgis.com/stories/9ea6810b647b4408946fa9e628f55879" 
+        width="100%" height="500" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+        
+## Publications
+<iframe src="https://ucnature.org/wp-content/uploads/2022/09/Burn-severity-and-community-structure-affect-tanoak-and-California-bay-laurel-regrowth.pdf" 
+        width="100%" height="500" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+
+
